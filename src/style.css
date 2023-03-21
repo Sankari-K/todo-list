@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300&family=Yusei+Magic&display=swap');
+
+:root {
+    --main: rgb(51, 51, 51);
+    --content: rgb(221, 221, 221);
+    --nav: rgb(200, 200, 200);
+    --nav-dark: rgb(170, 170, 170);
+
+}
+
+body {
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+img {
+    height: 25px;
+}
+
+#header {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    font-size: 42px;
+    background-color: var(--main);
+    padding: 20px 10px;
+    font-weight: 600;
+    font-family: 'Yusei Magic', sans-serif; 
+    color: var(--content);
+}
+
+#header img {
+    height: 60px;
+}
+
+.side-nav {
+    padding: 20px;
+    font-size: 20px;
+    background-color: var(--nav);
+}
+
+.side-nav img {
+    height: 30px;
+}
+
+.side-nav > div {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    gap: 4px;
+    border-radius: 7px;
+}
+
+.side-nav .nav-item:hover {
+    background-color: var(--nav-dark);
+    cursor: pointer;
+}
+
+.nav-item {
+    margin: 5px 0px;
+}
+
+
+.main-content {
+    flex-grow: 1;
+    display: grid;
+    grid-template-columns: minmax(240px, 1fr) 4fr;
+    background-color: var(--content);
+}
+
+footer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    justify-content: center;
+    background-color: var(--main);
+    color: var(--content);
+}
+
+footer img, #header img {
+    filter: invert(95%) sepia(0%) saturate(333%) hue-rotate(147deg) brightness(98%) contrast(85%);
+}
+
+div.project-container {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#add-project {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    width: 100%;
+    padding: 5px;
+    border-radius: 7px;
+}
+
+.project-container > span {
+    font-size: larger;
+    font-weight: 500;
+}
