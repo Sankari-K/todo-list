@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300&family=Yusei+Magic&display=swap');
 
 :root {
-    --main: rgb(51, 51, 51);
-    --content: rgb(221, 221, 221);
-    --nav: rgb(200, 200, 200);
-    --nav-dark: rgb(170, 170, 170);
+    --main: #333;
+    --content: #eee;
+    --nav: #ddd;
+    --nav-dark: #ccc;
 
 }
 
@@ -39,7 +39,7 @@ img {
 
 .side-nav {
     padding: 20px;
-    font-size: 20px;
+    font-size: 16px;
     background-color: var(--nav);
 }
 
@@ -51,7 +51,7 @@ img {
     display: flex;
     align-items: center;
     padding: 5px;
-    gap: 4px;
+    gap: 2px;
     border-radius: 7px;
 }
 
@@ -68,7 +68,7 @@ img {
 .main-content {
     flex-grow: 1;
     display: grid;
-    grid-template-columns: minmax(240px, 1fr) 4fr;
+    grid-template-columns: minmax(270px, 1fr) 6fr;
     background-color: var(--content);
 }
 

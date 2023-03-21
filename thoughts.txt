@@ -22,5 +22,7 @@ priority, dueDate, todos done and not done yet)
    Given the "id" of a task, change the todo as complete, priority etc 
 
 Tasks:
-- Create homepage
+- Create homepage (done)
+- Create primitives (todos, projects) (done)
+- Link project creation with the DOM
 - Brainstorm how to organize stuff
