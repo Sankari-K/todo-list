@@ -1,0 +1,26 @@
+- 'todos' will be objects, created using a factory function
+- properties for todo items?
+    1) title
+    2) description
+    3) dueDate
+    4) priority
+    5) notes (optional)
+- different lists of todos called projects
+  (include a 'default' project, so the inbox)
+
+
+Things to think about:
+
+1) Interface: 
+ - Inbox
+ - Sidebar with list of all Projects (open a project
+and all associated tasks come up)
+ - Filters (filter across all projects, filter on:
+priority, dueDate, todos done and not done yet)
+
+2) Have a project entity which has a list of todo items 
+   Given the "id" of a task, change the todo as complete, priority etc 
+
+Tasks:
+- Create homepage
+- Brainstorm how to organize stuff
