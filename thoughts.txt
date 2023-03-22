@@ -25,5 +25,7 @@ Tasks:
 - Create homepage (done)
 - Create primitives (todos, projects) (done)
 - Link project creation with the DOM (done)
+- Functions to delete projects (done)
+- Open a new "tab" for each project 
 - Add todos to every project
 - Brainstorm how to organize stuff
