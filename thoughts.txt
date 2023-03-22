@@ -24,5 +24,6 @@ priority, dueDate, todos done and not done yet)
 Tasks:
 - Create homepage (done)
 - Create primitives (todos, projects) (done)
-- Link project creation with the DOM
+- Link project creation with the DOM (done)
+- Add todos to every project
 - Brainstorm how to organize stuff

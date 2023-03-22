@@ -5,6 +5,8 @@
     --content: #eee;
     --nav: #ddd;
     --nav-dark: #ccc;
+    --green: #77dd77;
+    --red: #ff6961;
 
 }
 
@@ -105,4 +107,53 @@ div.project-container {
 .project-container > span {
     font-size: larger;
     font-weight: 500;
+}
+
+#new-project input {
+    width: 100%;
+    height: 25px;
+    border-radius: 7px;
+    border: 1px solid var(--main);
+    font-size: 16px;
+    padding: 5px;
+    margin: 0 0 10px 0;
+}
+
+#new-project button {
+    width: 100px;
+    font-size: 16px;
+    margin: 0 5px;
+    padding: 3px;
+    border-radius: 7px;
+}
+
+#new-project {
+    display: none; /* flex */
+    flex-wrap: wrap;
+}
+
+.green {
+    background-color: var(--green);
+}
+
+.red {
+    background-color: var(--red);
+}
+
+#projects {
+    width: 100%;
+}
+
+#projects > div {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    width: 100%;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 7px;
+}
+
+#projects > div:hover {
+    background-color: var(--nav-dark);
 }

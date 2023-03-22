@@ -19,7 +19,6 @@ const createProject = (name) => {
     return { name, todos, addToProject, removeFromProject };
 };
 
-// a module, we'll need only one of this
 const Projects = (() => {
     let projectList = {};
 
