@@ -1,12 +1,6 @@
 import './style.css';
 import { addProject } from './dom-manipulation/projectControls';
-import { Projects } from './modules/projects';
+import { createToDoInput } from './dom-manipulation/createToDo';
 
 document.querySelector('#add-project').addEventListener('click', addProject);
-
-// document.querySelector('#add-project').addEventListener('click', () => {
-//     console.log("woot!");
-//     console.log(Projects)
-// });
-
-
+document.querySelector('#create-todos').addEventListener('click', createToDoInput);

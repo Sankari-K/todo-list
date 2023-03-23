@@ -26,6 +26,7 @@ Tasks:
 - Create primitives (todos, projects) (done)
 - Link project creation with the DOM (done)
 - Functions to delete projects (done)
-- Open a new "tab" for each project 
+- Open a new "tab" for each project (done)
+- Create a todo creation element
 - Add todos to every project
 - Brainstorm how to organize stuff

@@ -1,9 +1,24 @@
-const createToDo = (title, description, dueDate, priority, project) => {
-    let title = title;
-    let description = description;
-    let dueDate = dueDate;
-    let priority = priority;
-    let project = project;
+const toDo = (() => {
+    let title;
+    let description;
+    let dueDate;
+    let priority;
+    let project;
+
+    const createToDo = (newTitle, newDescription, newDueDate, newPriority, newProject) => {
+        title = newTitle;
+        description = newDescription;
+        dueDate = newDueDate;
+        priority = newPriority;
+        project = newProject;
+        return {
+            title, 
+            description, 
+            dueDate, 
+            priority, 
+            project
+        };
+    };
 
     // setters 
     const changeTitle = newTitle => {
@@ -28,13 +43,14 @@ const createToDo = (title, description, dueDate, priority, project) => {
         dueDate,
         priority,
         project,
+        createToDo,
         changeTitle,
         changeDescription,
         changeDueDate,
         changePriority
     };
-}
+})();
 
 export {
-    createToDo
+    toDo
 };

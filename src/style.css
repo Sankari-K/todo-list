@@ -166,6 +166,102 @@ div.project-container {
     display: var(--cancel-display);
 }
 
+.content {
+    padding: 50px 15vw;
+}
 
+.content > span {
+    font-size: 30px;
+}
 
+#create-todos {
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    border-radius: 7px;
+    gap: 10px;
+}
 
+#create-todos:hover {
+    background-color: var(--nav-dark);
+    cursor: pointer;
+}
+
+.todo {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    border-radius: 7px;
+    background-color: aqua;
+    padding: 17px;
+    margin: 5px;
+    background: linear-gradient( to left, #ffd8c9, #ffd8c9 7px, var(--nav) 7px, var(--nav) 100% );
+}
+
+.todo > div {
+    flex-wrap: wrap;
+    display: flex;
+    gap: 10px;
+    align-items: flex-end;
+}
+.todo .title {
+    font-size: 22px;
+    font-weight: 500;
+    margin-right: auto;
+}
+/* .todo:hover {
+    background: linear-gradient( to right, #ffd8c9, #ffd8c9 7px, var(--nav) 7px, var(--nav) 100% );
+} */
+
+.todo .edits {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.due-date {
+    margin-right: auto;
+}
+
+#new-todo {
+    border: 1px solid var(--main);
+    padding: 10px;
+    border-radius: 7px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin: 10px 0;
+    display: none;
+}
+
+#new-todo input {
+    outline: 0;
+    border-width: 0 0;
+    background-color: var(--content);
+    font-size: 16px;
+}
+
+#new-todo select {
+    background-color: var(--content);
+    padding: 3px;
+    border-radius: 7px;
+}
+
+#new-todo button {
+    padding: 5px;
+    font-size: 16px;
+    border-radius: 7px;
+    width: minmax(200px, 50%);
+    align-self: center;
+}
+
+#new-todo .buttons {
+    display: flex;
+    gap: 5px;
+    justify-content: flex-end;
+}
+
+#new-todo input:first-child {
+    font-size: 20px;
+}

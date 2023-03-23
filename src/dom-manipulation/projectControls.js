@@ -1,5 +1,5 @@
 import { Projects } from "../modules/projects";
-
+import { showProjectPage } from "./projectPage";
 
 const deleteProject = (e) => {
     Projects.deleteProject(e.target.id);
@@ -78,6 +78,10 @@ const addProject = () => {
             name,
             cancel
         )
+
+        // add an event listener to this "element"
+        element.addEventListener('click', (e) => showProjectPage(e));
+
         projectContainer.appendChild(element)
         content.value = "";
         exitControls();
