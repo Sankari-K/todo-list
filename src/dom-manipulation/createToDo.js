@@ -122,5 +122,6 @@ const createToDoInput = () => {
 
 export {
     createToDoInput,
-    exitToDoInput
+    exitToDoInput,
+    createToDoDOM
 }

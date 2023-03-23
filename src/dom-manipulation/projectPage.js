@@ -1,4 +1,6 @@
 import { exitToDoInput } from "./createToDo";
+import { Projects } from "../modules/projects";
+import { createToDoDOM } from "./createToDo";
 
 const createTitle = (name) => {
     let contentContainer = document.querySelector('.content');
@@ -7,7 +9,6 @@ const createTitle = (name) => {
 
 const showProjectPage = (e) => {
     let projectName = e.target.innerText;
-    console.log(projectName);
 
     // create the title
     createTitle(projectName);
@@ -16,7 +17,14 @@ const showProjectPage = (e) => {
 
     // show all the to-dos under this project 
     let todoContainer = document.querySelector('.todos');
+    // clear anything else first
     todoContainer.innerHTML = "";
+    console.log(Projects.projectList[projectName].todos);
+    for (const todo of Projects.projectList[projectName].todos) {
+        console.log(todo)
+        let newToDo = createToDoDOM(todo);
+        todoContainer.appendChild(newToDo);
+    }
     
 }
 

@@ -29,8 +29,8 @@ Tasks:
 - Open a new "tab" for each project (done)
 - Create a todo creation element (done)
 - "Task can't be empty" bug (done)
+- Add todos to every project (done)
 
-- Add todos to every project 
 - Make sure "tab switching" b/w projects works flawlessly
 - What happens if we're on a project and delete it? 
 
