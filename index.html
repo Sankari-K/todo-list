@@ -39,7 +39,46 @@
             </div>
         </div>
         <div class="content">
-    
+            <span>Inbox</span>
+            <div id="create-todos">
+                <img src="../src/assets/side-nav/add.png" alt="add-todo">
+                <span>Create a task</span>
+            </div>
+            <div id="new-todo">
+                <input type="text" placeholder="Task name">
+                <input type="text" placeholder="Description">
+                <div>
+                    <label for="due-date">Due date:</label>
+                    <input type="date" id="due-date">
+                </div>
+                <div>
+                    <label for="priority">Priority:</label>
+                    <select name="priority" id="priority">
+                        <option value="1" selected>1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                </div>
+                <div class="buttons">
+                    <button class="red">Cancel</button>
+                    <button class="green">Create task</button>
+                </div>
+            </div>
+            <div class="todos">
+                <!-- <div class="todo">
+                    <div>
+                        <span class="title">Task name</span>
+                        <span class="project">Project</span>
+                    </div>
+                    <span class="description"><i>Description</i></span>
+                    <div class="edits">
+                        <span class="due-date">Due-date</span>
+                        <img src="../src/assets/content/edit.png" alt="edit-icon">
+                        <img src="../src/assets/content/delete.png" alt="delete-icon">
+                    </div>
+                </div> -->
+            </div>
         </div>
     </div>
     <footer>
