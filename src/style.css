@@ -24,6 +24,10 @@ img {
     height: 25px;
 }
 
+button {
+    cursor: pointer;
+}
+
 #header {
     display: flex;
     align-items: center;
@@ -206,7 +210,7 @@ div.project-container {
     align-items: flex-end;
 }
 .todo .title {
-    font-size: 22px;
+    font-size: 18px;
     font-weight: 500;
     margin-right: auto;
 }
@@ -218,6 +222,11 @@ div.project-container {
     display: flex;
     align-items: center;
     justify-content: flex-end;
+}
+
+.todo .edits > img:hover {
+    cursor: pointer;
+    filter: invert(54%) sepia(21%) saturate(1624%) hue-rotate(314deg) brightness(100%) contrast(102%);
 }
 
 .due-date {
@@ -264,4 +273,8 @@ div.project-container {
 
 #new-todo input:first-child {
     font-size: 20px;
+}
+
+.todo .description {
+    font-style: italic;
 }

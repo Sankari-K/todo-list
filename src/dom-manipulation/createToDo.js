@@ -19,6 +19,53 @@ const exitToDoInput = () => {
     createToDo.style.display = "none";
 }
 
+const createToDoDOM = (todo) => {
+    let todoElement = document.createElement('div');
+    todoElement.setAttribute('class', 'todo');
+
+    let header = document.createElement('div');
+    let title = document.createElement('span');
+    title.setAttribute('class', 'title');
+    title.textContent = todo.title;
+    let project = document.createElement('span');
+    project.setAttribute('class', 'project');
+    project.textContent = todo.project;
+    header.append(
+        title,
+        project
+    )
+
+    let desc = document.createElement('span');
+    desc.setAttribute('class', 'description');
+    desc.textContent = todo.description;
+
+    let edits = document.createElement('div');
+    edits.setAttribute('class', 'edits');
+
+    let due = document.createElement('span');
+    due.setAttribute('class', 'due-date');
+    due.textContent = todo.dueDate;
+    let editImg = document.createElement('img');
+    editImg.src = "../src/assets/content/edit.png";
+    editImg.alt = "edit-icon";
+    let deleteImg = document.createElement('img');
+    deleteImg.src = "../src/assets/content/delete.png";
+    deleteImg.alt = "delete-icon";
+
+    edits.append(
+        due,
+        editImg,
+        deleteImg
+    );
+
+    todoElement.append(
+        header,
+        desc,
+        edits
+    );
+    return todoElement;
+}
+
 const createToDoInput = () => {
     // DOM stuff first - hide the create button,
     // show the input form
@@ -34,17 +81,11 @@ const createToDoInput = () => {
     let priority = document.querySelector('#priority');
     
     // now, add event listeners for the submit and cancel button
-    document.querySelector('#new-todo .red').addEventListener('click', () => {
-        document.querySelector('#new-todo .green').removeEventListener('click', submitInput);
-        exitToDoInput();
-    });
+    document.querySelector('#new-todo .red').onclick = exitToDoInput;
 
-    // for the submit button 
-    document.querySelector('#new-todo .green').addEventListener('click', submitInput);
-    
-    function submitInput() {
+    function getToDoDetails() {
         // validate form
-        console.log("Clicked on submit!");
+        console.log("$$#$434");
         if (title.value == '') {
             window.alert("Task name can't be empty");
         }
@@ -66,12 +107,17 @@ const createToDoInput = () => {
             
             // add the todo to the project data structure
             Projects.projectList[projectName].addToProject(todo);
-            console.log(Projects);
 
-            // create a todo DOM structure
+            // create a todo DOM structure and append to existing elements
+            let toDoContainer = document.querySelector('.todos');
+            toDoContainer.appendChild(createToDoDOM(todo));
+            
             exitToDoInput();
         }
+
     }
+    // for the submit button 
+    document.querySelector('#new-todo .green').onclick = getToDoDetails;
 }
 
 export {

@@ -27,6 +27,18 @@ Tasks:
 - Link project creation with the DOM (done)
 - Functions to delete projects (done)
 - Open a new "tab" for each project (done)
-- Create a todo creation element
-- Add todos to every project
+- Create a todo creation element (done)
+- "Task can't be empty" bug (done)
+
+- Add todos to every project 
+- Make sure "tab switching" b/w projects works flawlessly
+- What happens if we're on a project and delete it? 
+
+- Provision to delete todos
+- Provision to edit todos
+- Element to set todo as complete
+- Debug the whole inbox concept
+
+
+
 - Brainstorm how to organize stuff
