@@ -30,14 +30,15 @@ Tasks:
 - Create a todo creation element (done)
 - "Task can't be empty" bug (done)
 - Add todos to every project (done)
-
-- Make sure "tab switching" b/w projects works flawlessly
-- What happens if we're on a project and delete it? 
+- Make sure "tab switching" b/w projects (minus inbox) works flawlessly (dones)
+- Make buttons look prettier (done)
 
 - Provision to delete todos
 - Provision to edit todos
+- Make todos look prettier
 - Element to set todo as complete
 - Debug the whole inbox concept
+- What happens if we're on a project and delete it? 
 
 
 

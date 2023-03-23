@@ -26,6 +26,8 @@ img {
 
 button {
     cursor: pointer;
+    border: 0px;
+    color: #fff;
 }
 
 #header {
@@ -258,7 +260,7 @@ div.project-container {
 }
 
 #new-todo button {
-    padding: 5px;
+    padding: 7px;
     font-size: 16px;
     border-radius: 7px;
     width: minmax(200px, 50%);
