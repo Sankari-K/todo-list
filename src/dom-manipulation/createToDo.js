@@ -22,7 +22,7 @@ const exitToDoInput = () => {
 
 const createToDoDOM = (todo) => {
     let todoElement = document.createElement('div');
-    todoElement.setAttribute('class', 'todo');
+    todoElement.classList.add('todo', `priority-${todo.priority}`);
 
     let header = document.createElement('div');
     let title = document.createElement('span');

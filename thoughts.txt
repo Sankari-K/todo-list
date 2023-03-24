@@ -33,15 +33,17 @@ Tasks:
 - Make sure "tab switching" b/w projects (minus inbox) works flawlessly (done)
 - Make buttons look prettier (done)
 - Provision to delete todos (done)
+- Make priorities work, color coding (done)
 
-- Provision to edit todos
 - Element to set todo as complete
+- Provision to edit todos
 - Make todos look prettier
-- Make priorities work, color coding
 - Debug the whole inbox concept
 - What happens if we're on a project and delete it? 
 - Filtering in the inbox
 - Get today and next week tab to work
+- Autocorrect 
+- Predictive text (???)
 
 
 

@@ -8,6 +8,27 @@
     --green: #77dd77;
     --red: #ff6961;
     --cancel-display: none;
+    --priority-color: aqua;
+}
+
+.priority-1 {
+    --priority-color: #F4442E;
+    --priority-bg: #F4442E66;
+}
+
+.priority-2 {
+    --priority-color: #FC9E4F;
+    --priority-bg: #FC9E4F66;
+}
+
+.priority-3 {
+    --priority-color: #EDD382;
+    --priority-bg: #EDD38266;
+}
+
+.priority-4 {
+    --priority-color: #F2F3AE;
+    --priority-bg: #F2F3AE66;
 }
 
 body {
@@ -135,7 +156,7 @@ div.project-container {
     width: 100px;
     font-size: 16px;
     margin: 0 5px;
-    padding: 3px;
+    padding: 5px;
     border-radius: 7px;
 }
 
@@ -207,7 +228,12 @@ div.project-container {
     background-color: aqua;
     padding: 17px;
     margin: 5px;
-    background: linear-gradient( to left, #ffd8c9, #ffd8c9 7px, var(--nav) 7px, var(--nav) 100% );
+    border: 2px solid var(--content);
+    background: linear-gradient( to left, var(--priority-color), var(--priority-color) 9px, var(--priority-bg) 9px, var(--priority-bg) 100% );
+}
+
+.todo:hover {
+    border: 2px solid var(--priority-bg);
 }
 
 .todo > div {
@@ -221,9 +247,6 @@ div.project-container {
     font-weight: 500;
     margin-right: auto;
 }
-/* .todo:hover {
-    background: linear-gradient( to right, #ffd8c9, #ffd8c9 7px, var(--nav) 7px, var(--nav) 100% );
-} */
 
 .todo .edits {
     display: flex;
@@ -233,7 +256,6 @@ div.project-container {
 
 .todo .edits > img:hover {
     cursor: pointer;
-    filter: invert(54%) sepia(21%) saturate(1624%) hue-rotate(314deg) brightness(100%) contrast(102%);
 }
 
 .due-date {
@@ -265,10 +287,11 @@ div.project-container {
 }
 
 #new-todo button {
-    padding: 7px;
+    padding: 5px;
+    margin: 0 2px;
     font-size: 16px;
     border-radius: 7px;
-    width: minmax(200px, 50%);
+    width: 100px;
     align-self: center;
 }
 
