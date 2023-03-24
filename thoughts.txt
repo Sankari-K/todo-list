@@ -35,13 +35,14 @@ Tasks:
 - Provision to delete todos (done)
 - Make priorities work, color coding (done)
 
-- Element to set todo as complete
+- Element to set todo as complete (still got to save it)
 - Provision to edit todos
 - Make todos look prettier
 - Debug the whole inbox concept
 - What happens if we're on a project and delete it? 
 - Filtering in the inbox
 - Get today and next week tab to work
+- Local storage
 - Autocorrect 
 - Predictive text (???)
 

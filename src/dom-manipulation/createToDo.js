@@ -25,9 +25,18 @@ const createToDoDOM = (todo) => {
     todoElement.classList.add('todo', `priority-${todo.priority}`);
 
     let header = document.createElement('div');
-    let title = document.createElement('span');
+    let title = document.createElement('div'); 
     title.setAttribute('class', 'title');
-    title.textContent = todo.title;
+    // title.textContent = todo.title;
+
+    let checkbox = document.createElement('input');
+    checkbox.setAttribute('type', 'checkbox');
+    title.appendChild(checkbox);
+
+    let titleName = document.createElement('span');
+    titleName.textContent = todo.title;
+    title.appendChild(titleName);
+
     let project = document.createElement('span');
     project.setAttribute('class', 'project');
     project.textContent = todo.project;

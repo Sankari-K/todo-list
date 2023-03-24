@@ -8,7 +8,8 @@
     --green: #77dd77;
     --red: #ff6961;
     --cancel-display: none;
-    --priority-color: aqua;
+    --priority-color: var(--nav-dark);
+    --priority-bg: var(--nav);
 }
 
 .priority-1 {
@@ -143,7 +144,7 @@ div.project-container {
     border: 1px solid var(--red);
     font-size: 16px;
     padding: 5px;
-    margin: 0 0 10px 0;
+    margin: 5px 0 10px 0;
     outline-width: 0;
 }
 
@@ -242,10 +243,14 @@ div.project-container {
     gap: 10px;
     align-items: flex-end;
 }
+
 .todo .title {
     font-size: 18px;
     font-weight: 500;
     margin-right: auto;
+    display: flex;
+    align-items: center;
+    gap: 3px;
 }
 
 .todo .edits {
@@ -307,4 +312,16 @@ div.project-container {
 
 .todo .description {
     font-style: italic;
+}
+
+input[type=checkbox] {
+    margin: 0px;
+    width: 20px;
+    height: 20px;
+    clip-path: circle(42% at 50% 50%);
+    accent-color: var(--priority-color);
+}
+
+input[type=checkbox]:checked + span {
+    text-decoration: line-through;
 }
