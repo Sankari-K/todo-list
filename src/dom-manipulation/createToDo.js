@@ -1,5 +1,6 @@
 import { Projects } from "../modules/projects";
 import { toDo } from "../modules/todo";
+import { deleteToDo } from "../dom-manipulation/deleteToDo";
 
 const exitToDoInput = () => {
     let addToDo = document.querySelector('#create-todos');
@@ -52,6 +53,10 @@ const createToDoDOM = (todo) => {
     deleteImg.src = "../src/assets/content/delete.png";
     deleteImg.alt = "delete-icon";
 
+    // add event listener to delete todos
+    deleteImg.addEventListener('click', deleteToDo);
+    deleteImg.correspondingToDo = todo;
+
     edits.append(
         due,
         editImg,
@@ -85,7 +90,6 @@ const createToDoInput = () => {
 
     function getToDoDetails() {
         // validate form
-        console.log("$$#$434");
         if (title.value == '') {
             window.alert("Task name can't be empty");
         }

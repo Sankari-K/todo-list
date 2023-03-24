@@ -8,7 +8,6 @@
     --green: #77dd77;
     --red: #ff6961;
     --cancel-display: none;
-
 }
 
 body {
@@ -120,10 +119,16 @@ div.project-container {
     width: 100%;
     height: 25px;
     border-radius: 7px;
-    border: 1px solid var(--main);
+    border: 1px solid var(--red);
     font-size: 16px;
     padding: 5px;
     margin: 0 0 10px 0;
+    outline-width: 0;
+}
+
+#new-project input:focus {
+    border: 1px solid var(--green);
+    outline-width: 0;
 }
 
 #new-project button {

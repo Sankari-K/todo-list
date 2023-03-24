@@ -1,6 +1,7 @@
 import { exitToDoInput } from "./createToDo";
 import { Projects } from "../modules/projects";
 import { createToDoDOM } from "./createToDo";
+import { deleteToDo } from "./deleteToDo";
 
 const createTitle = (name) => {
     let contentContainer = document.querySelector('.content');
@@ -19,13 +20,13 @@ const showProjectPage = (e) => {
     let todoContainer = document.querySelector('.todos');
     // clear anything else first
     todoContainer.innerHTML = "";
-    console.log(Projects.projectList[projectName].todos);
+    
     for (const todo of Projects.projectList[projectName].todos) {
-        console.log(todo)
         let newToDo = createToDoDOM(todo);
         todoContainer.appendChild(newToDo);
+        newToDo.querySelector('.edits').lastChild.addEventListener('click', deleteToDo);
+        newToDo.querySelector('.edits').lastChild.correspondingToDo = todo; 
     }
-    
 }
 
 export {
