@@ -4,6 +4,7 @@ const toDo = (() => {
     let dueDate;
     let priority;
     let project;
+    let done;
 
     const createToDo = (newTitle, newDescription, newDueDate, newPriority, newProject) => {
         title = newTitle;
@@ -11,12 +12,14 @@ const toDo = (() => {
         dueDate = newDueDate;
         priority = newPriority;
         project = newProject;
+        done = false;
         return {
             title, 
             description, 
             dueDate, 
             priority, 
-            project
+            project,
+            done
         };
     };
 

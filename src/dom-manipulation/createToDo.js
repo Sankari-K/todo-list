@@ -31,7 +31,19 @@ const createToDoDOM = (todo) => {
 
     let checkbox = document.createElement('input');
     checkbox.setAttribute('type', 'checkbox');
+    if (todo.done == true) {
+        checkbox.checked = true;
+    }
     title.appendChild(checkbox);
+
+    checkbox.addEventListener('change', () => {
+        if (checkbox.checked == true) {
+            todo.done = true;
+        }
+        else {
+            todo.done = false;
+        }
+    })
 
     let titleName = document.createElement('span');
     titleName.textContent = todo.title;
