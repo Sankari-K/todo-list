@@ -80,7 +80,7 @@ const addProject = () => {
         )
 
         // add an event listener to this "element"
-        element.addEventListener('click', (e) => showProjectPage(e));
+        element.addEventListener('click', (e) => showProjectPage(e, true));
 
         projectContainer.appendChild(element)
         content.value = "";

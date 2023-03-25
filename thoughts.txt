@@ -34,18 +34,16 @@ Tasks:
 - Make buttons look prettier (done)
 - Provision to delete todos (done)
 - Make priorities work, color coding (done)
+- Element to set todo as complete (done)
+- Provision to edit todos (done)
 
-- Element to set todo as complete (still got to save it)
-- Provision to edit todos
-- Make todos look prettier
+- Provision to edit todos: test (deleting todo while editing, 
+  clicking on edit again, moving to a different tab, etc)
 - Debug the whole inbox concept
 - What happens if we're on a project and delete it? 
 - Filtering in the inbox
 - Get today and next week tab to work
 - Local storage
-- Autocorrect 
-- Predictive text (???)
-
 
 
 - Brainstorm how to organize stuff

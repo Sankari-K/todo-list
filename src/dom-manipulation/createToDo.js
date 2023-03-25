@@ -1,6 +1,7 @@
 import { Projects } from "../modules/projects";
 import { toDo } from "../modules/todo";
 import { deleteToDo } from "../dom-manipulation/deleteToDo";
+import { editToDo } from "./editToDo";
 
 const exitToDoInput = () => {
     let addToDo = document.querySelector('#create-todos');
@@ -77,6 +78,7 @@ const createToDoDOM = (todo) => {
     // add event listener to delete todos
     deleteImg.addEventListener('click', deleteToDo);
     deleteImg.correspondingToDo = todo;
+    editImg.addEventListener('click', editToDo);
 
     edits.append(
         due,

@@ -8,8 +8,15 @@ const createTitle = (name) => {
     contentContainer.querySelector('span').textContent = name;
 }
 
-const showProjectPage = (e) => {
-    let projectName = e.target.innerText;
+const showProjectPage = (e, flag) => {
+    let projectName;
+    if (flag) {
+        projectName = e.target.innerText;
+    }
+    else {
+        projectName = e;
+    }
+    
 
     // create the title
     createTitle(projectName);
