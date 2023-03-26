@@ -1,9 +1,12 @@
 import { Projects } from "../modules/projects";
+import { showInbox } from "./inboxPage";
 import { showProjectPage } from "./projectPage";
 
 const deleteProject = (e) => {
     Projects.deleteProject(e.target.id);
+    showInbox();
     refreshProject();
+    e.stopPropagation();
 }
 
 const refreshProject = () => {

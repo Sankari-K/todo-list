@@ -48,9 +48,10 @@ Tasks:
         1) Initialize data structures with the default value (check)
         2) Show the proper default page (check)
   Remaining: testing (check)
+- Bug in deleting a task in the inbox (done)
+- What happens if we're on a project and delete it? Should redirect to inbox (done)
 
-- Bug in deleting a task in the inbox
-- What happens if we're on a project and delete it? Should redirect to inbox
+
 - Filtering in the inbox
 - Get today and next week tab to work
 - Local storage
