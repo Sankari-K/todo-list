@@ -37,12 +37,15 @@ Tasks:
 - Element to set todo as complete (done)
 - Provision to edit todos (done)
 - Make sure updated todo values are valid (done)
-
-- Provision to edit todos - test 
-        1) deleting todo while editing
+- Provision to edit todos - test (done)
+        1) deleting todo while editing (check)
         2) clicking on edit again (check)
         3) moving to a different tab (check)
-- Debug the whole inbox concept
+        
+- Debug the whole inbox concept 
+  (make sure are exit() functions are called, in case the user 
+  switches to the inbox w/o cicking on cancel - look at the 
+  projectPage file for reference)
 - What happens if we're on a project and delete it? 
 - Filtering in the inbox
 - Get today and next week tab to work

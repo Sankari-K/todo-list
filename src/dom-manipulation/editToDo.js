@@ -1,5 +1,3 @@
-import { Projects } from "../modules/projects";
-
 const exitEditForm = () => {
     // clean up
     let editForm = document.querySelector('#new-todo-edit');
@@ -17,7 +15,6 @@ const editToDo = (e) => {
     todoDOM.after(editForm);
 
     let title = document.querySelector('#new-todo-edit input:first-child');
-    console.log(title);
     title.value = todoEdit.title;
     let desc = title.nextElementSibling;
     desc.value = todoEdit.description;
@@ -26,7 +23,7 @@ const editToDo = (e) => {
     let priority = document.querySelector('#priority-edit');
     priority.value = todoEdit.priority;
     editForm.style.display = "flex";
-
+ 
     let cancelButton = document.querySelector('#new-todo-edit .buttons > .red');
     let submitButton = document.querySelector('#new-todo-edit .buttons > .green');
     cancelButton.onclick = exitEditForm;

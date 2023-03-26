@@ -1,8 +1,15 @@
 import { Projects } from "../modules/projects";
+import { exitEditForm } from "./editToDo";
 
 const deleteToDo = (e) => {
     let projectName = document.querySelector('.content').querySelector('span').textContent;
     let toDelete = e.currentTarget.correspondingToDo;
+
+    // if the edit option was opened for this, close that
+    let todoDOM = e.currentTarget.parentNode.parentNode;
+    if (todoDOM.nextSibling.id == "new-todo-edit") {
+        exitEditForm();
+    }
 
     let DOMContainer = document.querySelector('.todos').children;
     let index = 0;
