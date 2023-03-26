@@ -31,12 +31,18 @@ const editToDo = (e) => {
     cancelButton.onclick = exitEditForm;
 
     submitButton.onclick = function() {
+        // change values in the data structure
         todoEdit.title = title.value;
         todoEdit.description = desc.value;
         todoEdit.dueDate = dueDate.value;
         todoEdit.priority = priority.value;
         exitEditForm();
-        showProjectPage(projectName, false);
+
+        todoDOM.querySelector('.title').textContent = title.value;
+        todoDOM.querySelector('.description').textContent = desc.value;
+        todoDOM.querySelector('.due-date').textContent = dueDate.value;
+        // change priority class
+        todoDOM.className = todoDOM.className.replace( /priority-([1-4])/ , `priority-${todoEdit.priority}` )
     }
 }
 
