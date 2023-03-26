@@ -2,6 +2,7 @@ import { exitToDoInput } from "./createToDo";
 import { Projects } from "../modules/projects";
 import { createToDoDOM } from "./createToDo";
 import { deleteToDo } from "./deleteToDo";
+import { exitEditForm } from "./editToDo";
 
 const createTitle = (name) => {
     let contentContainer = document.querySelector('.content');
@@ -22,6 +23,8 @@ const showProjectPage = (e, flag) => {
     createTitle(projectName);
     // in case the todo-creator was opened by any other project
     exitToDoInput();
+    // in case the todo-editor was opened by any other project
+    exitEditForm();
 
     // show all the to-dos under this project 
     let todoContainer = document.querySelector('.todos');

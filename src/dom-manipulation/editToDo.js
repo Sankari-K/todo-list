@@ -1,5 +1,12 @@
 import { Projects } from "../modules/projects";
 
+const exitEditForm = () => {
+    // clean up
+    let editForm = document.querySelector('#new-todo-edit');
+    document.querySelector('#new-todo').after(editForm);
+    editForm.style.display = "none";
+}
+
 const editToDo = (e) => {
     // get the todo DOM
     let todoDOM = e.currentTarget.parentNode.parentNode;
@@ -10,6 +17,7 @@ const editToDo = (e) => {
     todoDOM.after(editForm);
 
     let title = document.querySelector('#new-todo-edit input:first-child');
+    console.log(title);
     title.value = todoEdit.title;
     let desc = title.nextElementSibling;
     desc.value = todoEdit.description;
@@ -19,12 +27,6 @@ const editToDo = (e) => {
     priority.value = todoEdit.priority;
     editForm.style.display = "flex";
 
-    const exitEditForm = () => {
-        // clean up
-        document.querySelector('#new-todo').after(editForm);
-        editForm.style.display = "none";
-    }
-
     let cancelButton = document.querySelector('#new-todo-edit .buttons > .red');
     let submitButton = document.querySelector('#new-todo-edit .buttons > .green');
     cancelButton.onclick = exitEditForm;
@@ -33,14 +35,17 @@ const editToDo = (e) => {
         // check values
         if (title.value == '') {
             window.alert("Task name can't be empty");
+            title.value = todoEdit.title;
             return;
         }
         else if (desc.value == '') {
             window.alert("Description can't be empty");
+            desc.value = todoEdit.description;
             return;
         }
         else if (dueDate.value == '') {
             window.alert("Due date can't be empty");
+            dueDate.value = todoEdit.dueDate;
             return;
         }
         // change values in the data structure
@@ -59,5 +64,6 @@ const editToDo = (e) => {
 }
 
 export {
-    editToDo
+    editToDo,
+    exitEditForm
 } 
