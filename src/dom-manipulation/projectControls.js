@@ -3,10 +3,15 @@ import { showInbox } from "./inboxPage";
 import { showProjectPage } from "./projectPage";
 
 const deleteProject = (e) => {
-    Projects.deleteProject(e.target.id);
-    showInbox();
-    refreshProject();
     e.stopPropagation();
+    Projects.deleteProject(e.target.id);
+    refreshProject();
+
+    let project = document.querySelector('.content > span').textContent;
+    // If we were on the project that just got deleted, go to inbox
+    if (project == e.target.id) {
+        showInbox();
+    }
 }
 
 const refreshProject = () => {
