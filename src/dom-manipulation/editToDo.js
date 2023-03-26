@@ -1,7 +1,6 @@
-import { showProjectPage } from "./projectPage";
+import { Projects } from "../modules/projects";
 
 const editToDo = (e) => {
-    let projectName = document.querySelector('.content').querySelector('span').textContent;
     // get the todo DOM
     let todoDOM = e.currentTarget.parentNode.parentNode;
     // get the todo object
@@ -31,6 +30,19 @@ const editToDo = (e) => {
     cancelButton.onclick = exitEditForm;
 
     submitButton.onclick = function() {
+        // check values
+        if (title.value == '') {
+            window.alert("Task name can't be empty");
+            return;
+        }
+        else if (desc.value == '') {
+            window.alert("Description can't be empty");
+            return;
+        }
+        else if (dueDate.value == '') {
+            window.alert("Due date can't be empty");
+            return;
+        }
         // change values in the data structure
         todoEdit.title = title.value;
         todoEdit.description = desc.value;

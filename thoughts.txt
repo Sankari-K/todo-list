@@ -36,6 +36,7 @@ Tasks:
 - Make priorities work, color coding (done)
 - Element to set todo as complete (done)
 - Provision to edit todos (done)
+- Make sure updated todo values are valid (done)
 
 - Provision to edit todos: test (deleting todo while editing, 
   clicking on edit again, moving to a different tab, etc)
