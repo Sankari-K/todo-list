@@ -7,7 +7,8 @@ const deleteToDo = (e) => {
 
     // if the edit option was opened for this, close that
     let todoDOM = e.currentTarget.parentNode.parentNode;
-    if (todoDOM.nextSibling.id == "new-todo-edit") {
+    console.log(todoDOM);
+    if (todoDOM.nextSibling != null && todoDOM.nextSibling.id == "new-todo-edit") {
         exitEditForm();
     }
 

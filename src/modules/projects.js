@@ -21,6 +21,7 @@ const createProject = (name) => {
 
 const Projects = (() => {
     let projectList = {};
+    projectList['Inbox'] = createProject('Inbox');
 
     const createNewProject = (name) => {
         projectList[name] = createProject(name);

@@ -40,13 +40,16 @@ Tasks:
 - Provision to edit todos - test (done)
         1) deleting todo while editing (check)
         2) clicking on edit again (check)
-        3) moving to a different tab (check)
-        
-- Debug the whole inbox concept 
+        3) moving to a different tab (check)     
+- Debug the whole inbox concept (done)
   (make sure are exit() functions are called, in case the user 
   switches to the inbox w/o cicking on cancel - look at the 
   projectPage file for reference)
-- What happens if we're on a project and delete it? 
+        1) Initialize data structures with the default value (check)
+        2) Show the proper default page (check)
+  Remaining: testing (check)
+
+- What happens if we're on a project and delete it? Should redirect to inbox
 - Filtering in the inbox
 - Get today and next week tab to work
 - Local storage
