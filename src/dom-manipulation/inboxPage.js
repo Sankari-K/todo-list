@@ -1,7 +1,6 @@
 import { exitToDoInput } from "./createToDo";
 import { Projects } from "../modules/projects";
 import { createToDoDOM } from "./createToDo";
-import { deleteToDo } from "./deleteToDo";
 import { exitEditForm } from "./editToDo";
 
 const createTitle = (name) => {
@@ -29,12 +28,11 @@ const showInbox = () => {
         for (const todo of Projects.projectList[project].todos) {
             let newToDo = createToDoDOM(todo);
             todoContainer.appendChild(newToDo);
-            newToDo.querySelector('.edits').lastChild.addEventListener('click', deleteToDo);
-            newToDo.querySelector('.edits').lastChild.correspondingToDo = todo; 
         }
     }
 }
 
 export {
+    createTitle,
     showInbox
 }

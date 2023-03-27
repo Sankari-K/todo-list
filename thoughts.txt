@@ -50,11 +50,12 @@ Tasks:
   Remaining: testing (check)
 - Bug in deleting a task in the inbox (done)
 - What happens if we're on a project and delete it? Should redirect to inbox (done)
+- Enhancement: redirect to inbox only when the user was on the deleted tab (done)
 
-
+- Get today tab to work
+- Get next week tab to work
 - Filtering in the inbox
-- Get today and next week tab to work
 - Local storage
-- Dealing with expired todos (use a filter in inbox/ automatically change its color?)
+- Dealing with expired/overdue todos (use a filter in inbox/ automatically change its color?)
 
 - Brainstorm how to organize stuff
