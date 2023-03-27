@@ -52,11 +52,17 @@ Tasks:
 - What happens if we're on a project and delete it? Should redirect to inbox (done)
 - Enhancement: redirect to inbox only when the user was on the deleted tab (done)
 - Get today tab to work (done)
+- Bug: When I click on edit in the today tab, the todo disappears (done)
+  [there was an error in the checkDueToday function, I didn't find the todo object to
+  find its due date property. once this was resolved, it had to be made sure that this
+  function will execute only *after* the todo is edited. so instead of adding an event 
+  listener for the edit button, I called the check() function in the edit todo function,
+  provided that the user is on the today page.]
 
-- Bug: When I click on edit in the today tab, the todo disappears 
 - Get next week tab to work
 - Filtering in the inbox
 - Local storage
 - Dealing with expired/overdue todos (use a filter in inbox/ automatically change its color?)
+- Dark mode
 
 - Brainstorm how to organize stuff

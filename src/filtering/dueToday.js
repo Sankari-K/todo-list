@@ -6,6 +6,7 @@ import { format } from 'date-fns'
 import { createToDoDOM } from "../dom-manipulation/createToDo";
 
 const checkDueToday = () => {
+    // remove the todo if its due date isn't today
     let todoContainer = document.querySelector('.todos').childNodes;
     
     let today = format(new Date(),'yyyy-MM-dd');

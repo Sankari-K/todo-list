@@ -60,8 +60,7 @@ const editToDo = (e) => {
         // change priority class
         todoDOM.className = todoDOM.className.replace( /priority-([1-4])/ , `priority-${todoEdit.priority}` );
 
-        // if we're on the "due today", check if the due date is no longer today
-        console.log(document.querySelector('.content > span'));
+        // if we're on the "due today" page, check if the due date is no longer today
         if (document.querySelector('.content > span').textContent == "Due today ⚠") {
             checkDueToday();
         }
