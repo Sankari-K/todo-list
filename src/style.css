@@ -229,6 +229,7 @@ div.project-container {
     background-color: aqua;
     padding: 17px;
     margin: 5px;
+    margin-top: 20px;
     border: 2px solid var(--content);
     background: linear-gradient( to left, var(--priority-color), var(--priority-color) 9px, var(--priority-bg) 9px, var(--priority-bg) 100% );
 }
