@@ -4,7 +4,6 @@
     2) description
     3) dueDate
     4) priority
-    5) notes (optional)
 - different lists of todos called projects
   (include a 'default' project, so the inbox)
 
@@ -58,11 +57,12 @@ Tasks:
   function will execute only *after* the todo is edited. so instead of adding an event 
   listener for the edit button, I called the check() function in the edit todo function,
   provided that the user is on the today page.]
+- Get next week tab to work (done)
 
-- Get next week tab to work
+- What happens when a todo is edited on the bext week tab?
+- Dealing with expired/overdue todos (use a filter in inbox/ automatically change its color?)
 - Filtering in the inbox
 - Local storage
-- Dealing with expired/overdue todos (use a filter in inbox/ automatically change its color?)
 - Dark mode
 
 - Brainstorm how to organize stuff

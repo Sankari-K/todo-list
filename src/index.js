@@ -3,6 +3,7 @@ import { addProject } from './dom-manipulation/projectControls';
 import { createToDoInput } from './dom-manipulation/createToDo';
 import { showInbox } from './dom-manipulation/inboxPage';
 import { showDueToday } from './filtering/dueToday';
+import { showDueThisWeek } from './filtering/dueThisWeek';
 
 // We start by showing the user the inbox page
 showInbox();
@@ -24,5 +25,5 @@ sidebar.getElementsByTagName('div')[1].addEventListener('click', function() {
 });
 // show tasks due this week when clicked on it
 sidebar.getElementsByTagName('div')[2].addEventListener('click', function() {
-    console.log("this week!!!");
+    showDueThisWeek();
 });
