@@ -58,6 +58,11 @@ const showDueThisWeek = () => {
             }
         }
     }
+
+    if (todoContainer.innerHTML == "") {
+        todoContainer.innerHTML = '<div class="done">Tasks done for the week! 🎉 </div>';
+        console.log("today empty!");
+    }
 }
 
 export {

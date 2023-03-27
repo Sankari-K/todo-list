@@ -61,13 +61,20 @@ const editToDo = (e) => {
         // change priority class
         todoDOM.className = todoDOM.className.replace( /priority-([1-4])/ , `priority-${todoEdit.priority}` );
 
+        let todoContainer = document.querySelector('.todos');
         // if we're on the "due today" page, check if the due date is no longer today
         if (document.querySelector('.content > span').textContent == "Due today ⚠") {
             checkDueToday();
+            if (todoContainer.innerHTML == "") {
+                todoContainer.innerHTML = '<div class="done">Tasks done for the day! 🎉 </div>';
+            }
         }
         // if we're on the "due this week" page, check if the due date is no longer this week
         else if (document.querySelector('.content > span').textContent == "Due this week") {
             checkDueThisWeek();
+            if (todoContainer.innerHTML == "") {
+                todoContainer.innerHTML = '<div class="done">Tasks done for the week! 🎉 </div>';
+            }
         }
     }
 }

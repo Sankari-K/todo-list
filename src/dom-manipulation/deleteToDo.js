@@ -23,6 +23,17 @@ const deleteToDo = (e) => {
             Projects.projectList[projectName].todos.splice(index, 1);
         };
     }
+
+    let todoContainer = document.querySelector('.todos');
+    if (document.querySelector('.content > span').textContent == "Due today ⚠" &&
+    todoContainer.innerHTML == "") {
+        todoContainer.innerHTML = '<div class="done">Tasks done for the day! 🎉 </div>';
+    }
+    // if we're on the "due this week" page, check if the due date is no longer this week
+    else if (document.querySelector('.content > span').textContent == "Due this week" &&
+    todoContainer.innerHTML == "") {
+        todoContainer.innerHTML = '<div class="done">Tasks done for the week! 🎉 </div>';
+    }
 }
 
 export {

@@ -47,6 +47,11 @@ const showDueToday = () => {
             }
         }
     }
+
+    if (todoContainer.innerHTML == "") {
+        todoContainer.innerHTML = '<div class="done">Tasks done for the day! 🎉 </div>';
+        console.log("today empty!");
+    }
 }
 
 export {

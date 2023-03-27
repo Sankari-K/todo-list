@@ -229,7 +229,6 @@ div.project-container {
     background-color: aqua;
     padding: 17px;
     margin: 5px;
-    margin-top: 20px;
     border: 2px solid var(--content);
     background: linear-gradient( to left, var(--priority-color), var(--priority-color) 9px, var(--priority-bg) 9px, var(--priority-bg) 100% );
 }
@@ -325,4 +324,12 @@ input[type=checkbox] {
 
 input[type=checkbox]:checked + span {
     text-decoration: line-through;
+}
+
+.done {
+    display: flex;
+    align-items: center;
+    margin-top: 100px;
+    justify-content: center;
+    font-size: 26px;
 }
