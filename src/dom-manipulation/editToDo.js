@@ -1,3 +1,4 @@
+import { checkDueThisWeek } from "../filtering/dueThisWeek";
 import { checkDueToday } from "../filtering/dueToday";
 
 const exitEditForm = () => {
@@ -63,6 +64,10 @@ const editToDo = (e) => {
         // if we're on the "due today" page, check if the due date is no longer today
         if (document.querySelector('.content > span').textContent == "Due today ⚠") {
             checkDueToday();
+        }
+        // if we're on the "due this week" page, check if the due date is no longer this week
+        else if (document.querySelector('.content > span').textContent == "Due this week") {
+            checkDueThisWeek();
         }
     }
 }

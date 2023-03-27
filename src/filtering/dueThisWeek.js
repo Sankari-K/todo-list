@@ -5,6 +5,28 @@ import { exitEditForm } from '../dom-manipulation/editToDo';
 import { Projects } from '../modules/projects';
 import { createToDoDOM } from '../dom-manipulation/createToDo';
 
+const checkDueThisWeek = () => {
+    // remove the todo if its due date isn't this week
+    let todoContainer = document.querySelector('.todos').childNodes;
+    
+    let today = new Date();
+    today.setHours(0,0,0,0);
+    let end = new Date(endOfISOWeek(today, {weekStartsOn: 1}));
+    end.setHours(0,0,0,0);
+
+    todoContainer.forEach(todo => {
+        if (todo.classList.contains('todo')) {
+            let todoObj = todo.querySelector('.edits').lastChild.correspondingToDo;
+            let due = new Date(todoObj.dueDate);
+            due.setHours(0,0,0,0);
+
+            if (!(due <= end && due >= today)) {
+                todo.remove();
+            }
+        }   
+    });
+}
+
 const showDueThisWeek = () => {
     createTitle('Due this week');
     // in case the todo-creator was opened by any other project
@@ -39,5 +61,6 @@ const showDueThisWeek = () => {
 }
 
 export {
-    showDueThisWeek
+    showDueThisWeek,
+    checkDueThisWeek
 }
