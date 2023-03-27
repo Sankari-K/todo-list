@@ -1,3 +1,5 @@
+import { checkDueToday } from "../filtering/dueToday";
+
 const exitEditForm = () => {
     // clean up
     let editForm = document.querySelector('#new-todo-edit');
@@ -56,7 +58,13 @@ const editToDo = (e) => {
         todoDOM.querySelector('.description').textContent = desc.value;
         todoDOM.querySelector('.due-date').textContent = dueDate.value;
         // change priority class
-        todoDOM.className = todoDOM.className.replace( /priority-([1-4])/ , `priority-${todoEdit.priority}` )
+        todoDOM.className = todoDOM.className.replace( /priority-([1-4])/ , `priority-${todoEdit.priority}` );
+
+        // if we're on the "due today", check if the due date is no longer today
+        console.log(document.querySelector('.content > span'));
+        if (document.querySelector('.content > span').textContent == "Due today ⚠") {
+            checkDueToday();
+        }
     }
 }
 

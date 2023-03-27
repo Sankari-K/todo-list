@@ -51,8 +51,9 @@ Tasks:
 - Bug in deleting a task in the inbox (done)
 - What happens if we're on a project and delete it? Should redirect to inbox (done)
 - Enhancement: redirect to inbox only when the user was on the deleted tab (done)
+- Get today tab to work (done)
 
-- Get today tab to work
+- Bug: When I click on edit in the today tab, the todo disappears 
 - Get next week tab to work
 - Filtering in the inbox
 - Local storage
