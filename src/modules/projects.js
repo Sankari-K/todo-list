@@ -1,6 +1,6 @@
-const createProject = (name) => {
+const createProject = (name, todos = []) => {
     // each project has a name and a list of todos
-    const todos = [];
+    // todos = [];
 
     const addToProject = todo => {
         todos.push(todo)
@@ -19,8 +19,8 @@ const createProject = (name) => {
     return { name, todos, addToProject, removeFromProject };
 };
 
-const Projects = (() => {
-    let projectList = {};
+let Projects = (projectList = {}) => {
+    // let projectList = {};
     projectList['Inbox'] = createProject('Inbox');
 
     const createNewProject = (name) => {
@@ -36,8 +36,9 @@ const Projects = (() => {
         createNewProject,
         deleteProject
     };
-})();
+};
 
 export {
-    Projects
+    Projects,
+    createProject
 };

@@ -60,11 +60,11 @@ Tasks:
 - Get next week tab to work (done)
 - What happens when a todo is edited on the bext week tab? (done)
 - Add a bottom margin for "today" and "this week" headers (done)
+- Add a "nothing due" text if today / next week is empty (done)
 
-- Add a "nothing due" text if today / next week is empty
+- Local storage
 - Dealing with expired/overdue todos (use a filter in inbox/ automatically change its color?)
 - Filtering in the inbox
-- Local storage
 - Dark mode
 
 - Brainstorm how to organize stuff
