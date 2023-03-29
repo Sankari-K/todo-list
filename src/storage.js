@@ -1,28 +1,30 @@
-import { Projects } from "./modules/projects";
+import { Projects, Project } from "./modules/projects";
 import { toDo } from "./modules/todo";
-import { createProject } from "./modules/projects";
 
 const localStorageFunctions = (() => {
     const fetchFromStorage = () => {
-        // sometime later
         let projects = JSON.parse(localStorage.proj);
+
+        console.log("projects:", projects);
 
         let tempProjects = {};
         for (let project in projects.projectList) {
             let tempToDos = [];
-            for (let todo in projects.projectList[project].todos) {
+            for (let todo of projects.projectList[project].todoList) {
+                console.log("todo", toDo.createToDo(todo.title, todo.description,
+                    todo.dueDate, todo.priority, todo.project, todo.done));
                 tempToDos.push(toDo.createToDo(todo.title, todo.description,
                     todo.dueDate, todo.priority, todo.project, todo.done));
             }
-            tempProjects[project] = createProject(project, tempToDos);
-            
+            tempProjects[project] = Project(project, tempToDos);
         }
-
-        return Projects(tempProjects); 
+        
+        return Projects(tempProjects);
     } 
 
     const dumpIntoStorage = (data) => {
         // storing
+        localStorage.proj = JSON.stringify({});
         localStorage.proj = JSON.stringify(data);
     }
 

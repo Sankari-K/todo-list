@@ -5,7 +5,6 @@ import { showInbox } from './dom-manipulation/inboxPage';
 import { showDueToday } from './filtering/dueToday';
 import { showDueThisWeek } from './filtering/dueThisWeek';
 import { localStorageFunctions } from './storage';
-import { Projects } from './modules/projects';
 
 
 // localStorage.proj = JSON.stringify({});
@@ -24,7 +23,9 @@ document.querySelector('#add-project').addEventListener('click', function() {
 });
 
 // to open up the create todo modal
-document.querySelector('#create-todos').addEventListener('click', createToDoInput);
+document.querySelector('#create-todos').addEventListener('click', function() {
+    createToDoInput(projectData)
+});
 
 let sidebar = document.querySelector('.side-nav');
 
@@ -32,11 +33,11 @@ let sidebar = document.querySelector('.side-nav');
 sidebar.getElementsByTagName('div')[0].addEventListener('click', function() {
     showInbox()
 });
-// show tasks due today when clicked on it
-sidebar.getElementsByTagName('div')[1].addEventListener('click', function() {
-    showDueToday();
-});
-// show tasks due this week when clicked on it
-sidebar.getElementsByTagName('div')[2].addEventListener('click', function() {
-    showDueThisWeek();
-});
+// // show tasks due today when clicked on it
+// sidebar.getElementsByTagName('div')[1].addEventListener('click', function() {
+//     showDueToday();
+// });
+// // show tasks due this week when clicked on it
+// sidebar.getElementsByTagName('div')[2].addEventListener('click', function() {
+//     showDueThisWeek();
+// });

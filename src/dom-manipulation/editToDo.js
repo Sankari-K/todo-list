@@ -1,5 +1,6 @@
 import { checkDueThisWeek } from "../filtering/dueThisWeek";
 import { checkDueToday } from "../filtering/dueToday";
+import { localStorageFunctions } from "../storage";
 
 const exitEditForm = () => {
     // clean up
@@ -8,7 +9,7 @@ const exitEditForm = () => {
     editForm.style.display = "none";
 }
 
-const editToDo = (e) => {
+const editToDo = (e, projectData) => {
     // get the todo DOM
     let todoDOM = e.currentTarget.parentNode.parentNode;
     // get the todo object
@@ -53,6 +54,7 @@ const editToDo = (e) => {
         todoEdit.description = desc.value;
         todoEdit.dueDate = dueDate.value;
         todoEdit.priority = priority.value;
+        localStorageFunctions.dumpIntoStorage(projectData);
         exitEditForm();
 
         todoDOM.querySelector('.title').textContent = title.value;

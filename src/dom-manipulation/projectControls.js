@@ -16,13 +16,12 @@ const deleteProject = (e, projectData) => {
 }
 
 const refreshProject = (projectData) => {
-    console.log(projectData.projectList)
     document.querySelector('#projects').innerHTML = "";
     for (let project in projectData.projectList) {
         if (project == "Inbox") {
             continue;
         }
-        console.log(project); // project is the project name
+        // project is the project name
 
         // create a project DOM for this now
         let newProjectName = project;

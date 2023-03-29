@@ -1,7 +1,7 @@
-import { Projects } from "../modules/projects";
 import { toDo } from "../modules/todo";
 import { deleteToDo } from "../dom-manipulation/deleteToDo";
 import { editToDo } from "./editToDo";
+import { localStorageFunctions } from "../storage";
 
 const exitToDoInput = () => {
     let addToDo = document.querySelector('#create-todos');
@@ -21,7 +21,7 @@ const exitToDoInput = () => {
     createToDo.style.display = "none";
 }
 
-const createToDoDOM = (todo) => {
+const createToDoDOM = (todo, projectData) => {
     let todoElement = document.createElement('div');
     todoElement.classList.add('todo', `priority-${todo.priority}`);
 
@@ -76,9 +76,13 @@ const createToDoDOM = (todo) => {
     deleteImg.alt = "delete-icon";
 
     // add event listener to delete todos
-    deleteImg.addEventListener('click', deleteToDo);
+    deleteImg.addEventListener('click', function(e) {
+        deleteToDo(e, projectData);
+    });
     deleteImg.correspondingToDo = todo;
-    editImg.addEventListener('click', editToDo);
+    editImg.addEventListener('click', function(e) {
+        editToDo(e, projectData);
+    });
 
     edits.append(
         due,
@@ -94,7 +98,7 @@ const createToDoDOM = (todo) => {
     return todoElement;
 }
 
-const createToDoInput = () => {
+const createToDoInput = (projectData) => {
     // DOM stuff first - hide the create button,
     // show the input form
     let addToDo = document.querySelector('#create-todos');
@@ -133,11 +137,12 @@ const createToDoInput = () => {
                 projectName);
             
             // add the todo to the project data structure
-            Projects.projectList[projectName].addToProject(todo);
+            projectData.projectList[projectName].addToProject(todo);
+            localStorageFunctions.dumpIntoStorage(projectData);
 
             // create a todo DOM structure and append to existing elements
             let toDoContainer = document.querySelector('.todos');
-            toDoContainer.appendChild(createToDoDOM(todo));
+            toDoContainer.appendChild(createToDoDOM(todo, projectData));
             
             exitToDoInput();
         }

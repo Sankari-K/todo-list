@@ -1,7 +1,7 @@
-import { Projects } from "../modules/projects";
+import { localStorageFunctions } from "../storage";
 import { exitEditForm } from "./editToDo";
 
-const deleteToDo = (e) => {
+const deleteToDo = (e, projectData) => {
     let toDelete = e.currentTarget.correspondingToDo;
     let projectName = toDelete.project;
 
@@ -18,9 +18,10 @@ const deleteToDo = (e) => {
             // remove it from the DOM
             todo.remove();
             // now, delete it from the data structure
-            let index = Projects.projectList[projectName].todos.indexOf(toDelete);
-            delete Projects.projectList[projectName].todos[index]
-            Projects.projectList[projectName].todos.splice(index, 1);
+            let index = projectData.projectList[projectName].todoList.indexOf(toDelete);
+            delete projectData.projectList[projectName].todoList[index]
+            projectData.projectList[projectName].todoList.splice(index, 1);
+            localStorageFunctions.dumpIntoStorage(projectData);
         };
     }
 

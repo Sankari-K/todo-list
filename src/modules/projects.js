@@ -1,30 +1,35 @@
-const createProject = (name, todos = []) => {
+const Project = (inputName, inputTodoList) => {
     // each project has a name and a list of todos
     // todos = [];
-
-    const addToProject = todo => {
-        todos.push(todo)
+    let todoList = inputTodoList;
+    let name = inputName;
+    
+    
+    const addToProject = (todo) => {
+        todoList.push(todo)
     };
 
     const removeFromProject = todo => {
-        var index = todos.indexOf(todo);
-        var removedTodo = todos[index];
+        var index = todoList.indexOf(todo);
+        var removedTodo = todoList[index];
 
         if (index != -1) {
-            todos.splice(index, 1);
+            todoList.splice(index, 1);
         }
         return removedTodo;
     };
 
-    return { name, todos, addToProject, removeFromProject };
+    return { name, todoList, addToProject, removeFromProject };
 };
 
-let Projects = (projectList = {}) => {
-    // let projectList = {};
-    projectList['Inbox'] = createProject('Inbox');
-
+let Projects = (newProjectList) => {
+    let projectList = newProjectList;
+    if (!('Inbox' in projectList)) {
+        projectList['Inbox'] = Project('Inbox', []);
+    }
+    
     const createNewProject = (name) => {
-        projectList[name] = createProject(name);
+        projectList[name] = Project(name, []);
     };
 
     const deleteProject = (name) => {
@@ -40,5 +45,5 @@ let Projects = (projectList = {}) => {
 
 export {
     Projects,
-    createProject
+    Project
 };
