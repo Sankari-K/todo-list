@@ -13,7 +13,7 @@ let projectData = localStorageFunctions.fetchFromStorage();
 localStorageFunctions.dumpIntoStorage(projectData);
 
 // We start by showing the user the inbox page
-showInbox();
+showInbox(projectData);
 // make sure all projects are visible
 refreshProject(projectData);
 
@@ -24,15 +24,16 @@ document.querySelector('#add-project').addEventListener('click', function() {
 
 // to open up the create todo modal
 document.querySelector('#create-todos').addEventListener('click', function() {
-    createToDoInput(projectData)
+    createToDoInput(projectData);
 });
 
 let sidebar = document.querySelector('.side-nav');
 
 // show inbox when clicked on it
 sidebar.getElementsByTagName('div')[0].addEventListener('click', function() {
-    showInbox()
+    showInbox(projectData);
 });
+
 // // show tasks due today when clicked on it
 // sidebar.getElementsByTagName('div')[1].addEventListener('click', function() {
 //     showDueToday();

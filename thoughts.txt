@@ -63,6 +63,7 @@ Tasks:
 - Add a "nothing due" text if today / next week is empty (done)
 
 - Local storage
+- Bug: when in the inbox tab, when someone deletes a project, those associated tasks still stay
 - Dealing with expired/overdue todos (use a filter in inbox/ automatically change its color?)
 - Filtering in the inbox
 - Dark mode

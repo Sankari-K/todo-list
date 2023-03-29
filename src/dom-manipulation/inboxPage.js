@@ -8,7 +8,7 @@ const createTitle = (name) => {
     contentContainer.querySelector('span').textContent = name;
 }
 
-const showInbox = () => {
+const showInbox = (projectData) => {
     let projectName = "Inbox";
     
     // create the title
@@ -23,10 +23,11 @@ const showInbox = () => {
     todoContainer.innerHTML = "";
     
     // show ALL todos
-    for (const project in Projects.projectList) {
+    console.log(projectData)
+    for (const project in projectData.projectList) {
         // project has the project names
-        for (const todo of Projects.projectList[project].todos) {
-            let newToDo = createToDoDOM(todo);
+        for (const todo of projectData.projectList[project].todoList) {
+            let newToDo = createToDoDOM(todo, projectData);
             todoContainer.appendChild(newToDo);
         }
     }

@@ -1,7 +1,5 @@
 import { exitToDoInput } from "./createToDo";
-import { Projects } from "../modules/projects";
 import { createToDoDOM } from "./createToDo";
-import { deleteToDo } from "./deleteToDo";
 import { exitEditForm } from "./editToDo";
 
 const createTitle = (name) => {
@@ -9,7 +7,7 @@ const createTitle = (name) => {
     contentContainer.querySelector('span').textContent = name;
 }
 
-const showProjectPage = (e, flag) => {
+const showProjectPage = (e, flag, projectData) => {
     let projectName;
     if (flag) {
         projectName = e.target.innerText;
@@ -31,11 +29,9 @@ const showProjectPage = (e, flag) => {
     // clear anything else first
     todoContainer.innerHTML = "";
     
-    for (const todo of Projects.projectList[projectName].todos) {
-        let newToDo = createToDoDOM(todo);
+    for (const todo of projectData.projectList[projectName].todoList) {
+        let newToDo = createToDoDOM(todo, projectData);
         todoContainer.appendChild(newToDo);
-        newToDo.querySelector('.edits').lastChild.addEventListener('click', deleteToDo);
-        newToDo.querySelector('.edits').lastChild.correspondingToDo = todo; 
     }
 }
 

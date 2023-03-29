@@ -52,7 +52,7 @@ const refreshProject = (projectData) => {
         )
 
         // add an event listener to this "element"
-        element.addEventListener('click', (e) => showProjectPage(e, true));
+        element.addEventListener('click', (e) => showProjectPage(e, true, projectData));
         projectContainer.appendChild(element)
     }
 }
