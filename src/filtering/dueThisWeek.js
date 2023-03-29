@@ -1,4 +1,4 @@
-import { endOfISOWeek } from 'date-fns';
+import { endOfISOWeek, startOfISOWeek } from 'date-fns';
 import { createTitle } from '../dom-manipulation/inboxPage';
 import { exitToDoInput, createToDoDOM } from '../dom-manipulation/createToDo';
 import { exitEditForm } from '../dom-manipulation/editToDo';
@@ -11,6 +11,8 @@ const checkDueThisWeek = () => {
     today.setHours(0,0,0,0);
     let end = new Date(endOfISOWeek(today, {weekStartsOn: 1}));
     end.setHours(0,0,0,0);
+    let start = new Date(startOfISOWeek(today, {weekStartsOn: 1}));
+    start.setHours(0,0,0,0);
 
     todoContainer.forEach(todo => {
         if (todo.classList.contains('todo')) {
@@ -18,7 +20,7 @@ const checkDueThisWeek = () => {
             let due = new Date(todoObj.dueDate);
             due.setHours(0,0,0,0);
 
-            if (!(due <= end && due >= today)) {
+            if (!(due <= end && due >= start)) {
                 todo.remove();
             }
         }   
@@ -44,14 +46,16 @@ const showDueThisWeek = (projectData) => {
     today.setHours(0,0,0,0);
     let end = new Date(endOfISOWeek(today, {weekStartsOn: 1}));
     end.setHours(0,0,0,0);
+    let start = new Date(startOfISOWeek(today, {weekStartsOn: 1}));
+    start.setHours(0,0,0,0);
 
     for (const project in projectData.projectList) {
         // project has the project names
         for (const todo of projectData.projectList[project].todoList) {
             let due = new Date(todo.dueDate);
             due.setHours(0,0,0,0);
-            if (due <= end && due >= today) {
-                let newToDo = createToDoDOM(todo);
+            if (due <= end && due >= start) {
+                let newToDo = createToDoDOM(todo, projectData);
                 todoContainer.appendChild(newToDo);
             }
         }

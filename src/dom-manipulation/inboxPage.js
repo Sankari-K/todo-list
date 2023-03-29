@@ -22,9 +22,8 @@ const showInbox = (projectData) => {
     todoContainer.innerHTML = "";
     
     // show ALL todos
-    console.log(projectData)
     for (const project in projectData.projectList) {
-        // project has the project names
+        // project holds the project names
         for (const todo of projectData.projectList[project].todoList) {
             let newToDo = createToDoDOM(todo, projectData);
             todoContainer.appendChild(newToDo);

@@ -22,7 +22,7 @@ document.querySelector('#add-project').addEventListener('click', function() {
     addProject(projectData);
 });
 
-// to open up the create todo modal
+// to open up the create todo modal - inside the inbox
 document.querySelector('#create-todos').addEventListener('click', function() {
     createToDoInput(projectData);
 });

@@ -9,8 +9,6 @@ const localStorageFunctions = (() => {
         for (let project in projects.projectList) {
             let tempToDos = [];
             for (let todo of projects.projectList[project].todoList) {
-                console.log("todo", toDo.createToDo(todo.title, todo.description,
-                    todo.dueDate, todo.priority, todo.project, todo.done));
                 tempToDos.push(toDo.createToDo(todo.title, todo.description,
                     todo.dueDate, todo.priority, todo.project, todo.done));
             }
