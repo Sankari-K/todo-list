@@ -2,6 +2,8 @@ import { toDo } from "../modules/todo";
 import { deleteToDo } from "../dom-manipulation/deleteToDo";
 import { editToDo } from "./editToDo";
 import { localStorageFunctions } from "../storage";
+import delSrc from "../assets/content/delete.png";
+import editSrc from "../assets/content/edit.png";
 
 const exitToDoInput = () => {
     let addToDo = document.querySelector('#create-todos');
@@ -70,10 +72,10 @@ const createToDoDOM = (todo, projectData) => {
     due.setAttribute('class', 'due-date');
     due.textContent = todo.dueDate;
     let editImg = document.createElement('img');
-    editImg.src = "../src/assets/content/edit.png";
+    editImg.src = editSrc;
     editImg.alt = "edit-icon";
     let deleteImg = document.createElement('img');
-    deleteImg.src = "../src/assets/content/delete.png";
+    deleteImg.src = delSrc;
     deleteImg.alt = "delete-icon";
 
     // add event listener to delete todos

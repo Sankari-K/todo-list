@@ -67,8 +67,10 @@ Tasks:
 - Clicking on edit on "due this week" corrupts the JSON (done)
 - Local storage (done)
 - Dealing with corrupted JSON (done)
+- 404: assets not found (gh pages deployment) (done)
 
 - Bug: when in the inbox tab, when someone deletes a project, those associated tasks still stay
+- Bug: projectData becomes undefined when you delete a project while in it
 - Dealing with expired/overdue todos (use a filter in inbox/ automatically change its color?)
 - Filtering in the inbox (priorities, completed / not completed, overdue)
 - Transitions for when a DOM element is deleted

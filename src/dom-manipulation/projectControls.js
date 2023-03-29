@@ -1,6 +1,8 @@
 import { showInbox } from "./inboxPage";
 import { showProjectPage } from "./projectPage";
 import { localStorageFunctions } from "../storage";
+import projSrc from "../assets/side-nav/project.png";
+import cancelSrc from "../assets/side-nav/cancel.png";
 
 const deleteProject = (e, projectData) => {
     e.stopPropagation();
@@ -31,11 +33,11 @@ const refreshProject = (projectData) => {
         let element = document.createElement('div');
 
         let image = document.createElement('img');
-        image.src = "../src/assets/side-nav/project.png";
+        image.src = projSrc;
         image.alt = "project icon";
 
         let cancel = document.createElement('img');
-        cancel.src = "../src/assets/side-nav/cancel.png";
+        cancel.src = cancelSrc;
         cancel.alt = "delete project";
         cancel.setAttribute('class', 'cancel');
         cancel.setAttribute('id', newProjectName);
