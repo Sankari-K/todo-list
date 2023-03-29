@@ -66,13 +66,15 @@ Tasks:
 - Bug: due this week tab doesn't work for tasks due on previous days of the week (done)
 - Clicking on edit on "due this week" corrupts the JSON (done)
 - Local storage (done)
+- Dealing with corrupted JSON (done)
 
-- Dealing with corrupted JSON
 - Bug: when in the inbox tab, when someone deletes a project, those associated tasks still stay
 - Dealing with expired/overdue todos (use a filter in inbox/ automatically change its color?)
 - Filtering in the inbox (priorities, completed / not completed, overdue)
 - Transitions for when a DOM element is deleted
 - Hover effects for edit and delete button, currently only the cursor changes
 - Dark mode
+- Functionality to hide side nav or hide all projects
+- Make is responsive
 
 - Brainstorm how to organize stuff

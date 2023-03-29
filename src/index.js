@@ -6,11 +6,22 @@ import { showDueToday } from './filtering/dueToday';
 import { showDueThisWeek } from './filtering/dueThisWeek';
 import { localStorageFunctions } from './storage';
 
+let projectData;
+try {
+    projectData = localStorageFunctions.fetchFromStorage();
+}
+catch {
+    // data required from localStorage isn’t there
+    localStorage.proj = JSON.stringify({});
+    projectData = localStorageFunctions.fetchFromStorage();
+}
+finally {
+    localStorageFunctions.dumpIntoStorage(projectData);
+}
 
 // localStorage.proj = JSON.stringify({});
-
-let projectData = localStorageFunctions.fetchFromStorage();
-localStorageFunctions.dumpIntoStorage(projectData);
+// projectData = localStorageFunctions.fetchFromStorage();
+// localStorageFunctions.dumpIntoStorage(projectData);
 
 // We start by showing the user the inbox page
 showInbox(projectData);
