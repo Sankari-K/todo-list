@@ -21,62 +21,62 @@ priority, dueDate, todos done and not done yet)
    Given the "id" of a task, change the todo as complete, priority etc 
 
 Tasks:
-- Create homepage (done)
-- Create primitives (todos, projects) (done)
-- Link project creation with the DOM (done)
-- Functions to delete projects (done)
-- Open a new "tab" for each project (done)
-- Create a todo creation element (done)
-- "Task can't be empty" bug (done)
-- Add todos to every project (done)
-- Make sure "tab switching" b/w projects (minus inbox) works flawlessly (done)
-- Make buttons look prettier (done)
-- Provision to delete todos (done)
-- Make priorities work, color coding (done)
-- Element to set todo as complete (done)
-- Provision to edit todos (done)
-- Make sure updated todo values are valid (done)
-- Provision to edit todos - test (done)
+1. Create homepage (done)
+2. Create primitives (todos, projects) (done)
+3. Link project creation with the DOM (done)
+4. Functions to delete projects (done)
+5. Open a new "tab" for each project (done)
+6. Create a todo creation element (done)
+7. "Task can't be empty" bug (done)
+8. Add todos to every project (done)
+9. Make sure "tab switching" b/w projects (minus inbox) works flawlessly (done)
+10. Make buttons look prettier (done)
+11. Provision to delete todos (done)
+12. Make priorities work, color coding (done)
+13. Element to set todo as complete (done)
+14. Provision to edit todos (done)
+15. Make sure updated todo values are valid (done)
+16. Provision to edit todos - test (done)
         1) deleting todo while editing (check)
         2) clicking on edit again (check)
         3) moving to a different tab (check)     
-- Debug the whole inbox concept (done)
+17. Debug the whole inbox concept (done)
   (make sure are exit() functions are called, in case the user 
   switches to the inbox w/o cicking on cancel - look at the 
   projectPage file for reference)
         1) Initialize data structures with the default value (check)
         2) Show the proper default page (check)
   Remaining: testing (check)
-- Bug in deleting a task in the inbox (done)
-- What happens if we're on a project and delete it? Should redirect to inbox (done)
-- Enhancement: redirect to inbox only when the user was on the deleted tab (done)
-- Get today tab to work (done)
-- Bug: When I click on edit in the today tab, the todo disappears (done)
+18. Bug in deleting a task in the inbox (done)
+19. What happens if we're on a project and delete it? Should redirect to inbox (done)
+20. Enhancement: redirect to inbox only when the user was on the deleted tab (done)
+21. Get today tab to work (done)
+22. Bug: When I click on edit in the today tab, the todo disappears (done)
   [there was an error in the checkDueToday function, I didn't find the todo object to
   find its due date property. once this was resolved, it had to be made sure that this
   function will execute only *after* the todo is edited. so instead of adding an event 
   listener for the edit button, I called the check() function in the edit todo function,
   provided that the user is on the today page.]
-- Get next week tab to work (done)
-- What happens when a todo is edited on the bext week tab? (done)
-- Add a bottom margin for "today" and "this week" headers (done)
-- Add a "nothing due" text if today / next week is empty (done)
-- Add persistence for task status (whether it is done/not done) (done)
-- Bug: checkbox disappears when edit button is clicked?? (done)
-- Bug: due this week tab doesn't work for tasks due on previous days of the week (done)
-- Clicking on edit on "due this week" corrupts the JSON (done)
-- Local storage (done)
-- Dealing with corrupted JSON (done)
-- 404: assets not found (gh pages deployment) (done)
+23. Get next week tab to work (done)
+24. What happens when a todo is edited on the bext week tab? (done)
+25. Add a bottom margin for "today" and "this week" headers (done)
+26. Add a "nothing due" text if today / next week is empty (done)
+27. Add persistence for task status (whether it is done/not done) (done)
+28. Bug: checkbox disappears when edit button is clicked?? (done)
+29. Bug: due this week tab doesn't work for tasks due on previous days of the week (done)
+30. Clicking on edit on "due this week" corrupts the JSON (done)
+31. Local storage (done)
+32. Dealing with corrupted JSON (done)
+33. 404: assets not found (gh pages deployment) (done)
+34. Bug: projectData becomes undefined when you delete a project while in it (done)
 
-- Bug: when in the inbox tab, when someone deletes a project, those associated tasks still stay
-- Bug: projectData becomes undefined when you delete a project while in it
-- Dealing with expired/overdue todos (use a filter in inbox/ automatically change its color?)
-- Filtering in the inbox (priorities, completed / not completed, overdue)
-- Transitions for when a DOM element is deleted
-- Hover effects for edit and delete button, currently only the cursor changes
-- Dark mode
-- Functionality to hide side nav or hide all projects
-- Make is responsive
+35. Bug: when in the inbox tab, when someone deletes a project, those associated tasks still stay
+36. Dealing with expired/overdue todos (use a filter in inbox/ automatically change its color?)
+37. Filtering in the inbox (priorities, completed / not completed, overdue)
+38. Transitions for when a DOM element is deleted
+39. Hover effects for edit and delete button, currently only the cursor changes
+40. Dark mode
+41. Functionality to hide side nav or hide all projects
+42. Make is responsive
 
 - Brainstorm how to organize stuff
