@@ -18,6 +18,7 @@ const editToDo = (e, projectData) => {
     let editForm = document.querySelector('#new-todo-edit');
     todoDOM.after(editForm);
 
+    // filling in the default, old values
     let title = document.querySelector('#new-todo-edit input:first-child');
     title.value = todoEdit.title;
     let desc = title.nextElementSibling;
@@ -57,7 +58,7 @@ const editToDo = (e, projectData) => {
         localStorageFunctions.dumpIntoStorage(projectData);
         exitEditForm();
 
-        todoDOM.querySelector('.title').textContent = title.value;
+        todoDOM.querySelector('.title > span').textContent = title.value;
         todoDOM.querySelector('.description').textContent = desc.value;
         todoDOM.querySelector('.due-date').textContent = dueDate.value;
         // change priority class
