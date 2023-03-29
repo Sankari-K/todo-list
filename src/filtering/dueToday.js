@@ -1,9 +1,7 @@
 import { createTitle } from "../dom-manipulation/inboxPage";
-import { exitToDoInput } from "../dom-manipulation/createToDo";
+import { exitToDoInput, createToDoDOM } from "../dom-manipulation/createToDo";
 import { exitEditForm } from "../dom-manipulation/editToDo";
-import { Projects } from "../modules/projects";
 import { format } from 'date-fns'
-import { createToDoDOM } from "../dom-manipulation/createToDo";
 
 const checkDueToday = () => {
     // remove the todo if its due date isn't today
@@ -20,7 +18,7 @@ const checkDueToday = () => {
     });
 }
 
-const showDueToday = () => {
+const showDueToday = (projectData) => {
     createTitle('Due today ⚠');
     // in case the todo-creator was opened by any other project
     exitToDoInput();
@@ -38,11 +36,11 @@ const showDueToday = () => {
     // show all projects due today
     let today = format(new Date(),'yyyy-MM-dd');
 
-    for (const project in Projects.projectList) {
+    for (const project in projectData.projectList) {
         // project has the project names
-        for (const todo of Projects.projectList[project].todos) {
+        for (const todo of projectData.projectList[project].todoList) {
             if (todo.dueDate == today) {
-                let newToDo = createToDoDOM(todo);
+                let newToDo = createToDoDOM(todo, projectData);
                 todoContainer.appendChild(newToDo);
             }
         }
@@ -50,7 +48,6 @@ const showDueToday = () => {
 
     if (todoContainer.innerHTML == "") {
         todoContainer.innerHTML = '<div class="done">Tasks done for the day! 🎉 </div>';
-        console.log("today empty!");
     }
 }
 

@@ -34,11 +34,12 @@ sidebar.getElementsByTagName('div')[0].addEventListener('click', function() {
     showInbox(projectData);
 });
 
-// // show tasks due today when clicked on it
-// sidebar.getElementsByTagName('div')[1].addEventListener('click', function() {
-//     showDueToday();
-// });
-// // show tasks due this week when clicked on it
-// sidebar.getElementsByTagName('div')[2].addEventListener('click', function() {
-//     showDueThisWeek();
-// });
+// show tasks due today when clicked on it
+sidebar.getElementsByTagName('div')[1].addEventListener('click', function() {
+    showDueToday(projectData);
+});
+
+// show tasks due this week when clicked on it
+sidebar.getElementsByTagName('div')[2].addEventListener('click', function() {
+    showDueThisWeek(projectData);
+});

@@ -62,11 +62,16 @@ Tasks:
 - Add a bottom margin for "today" and "this week" headers (done)
 - Add a "nothing due" text if today / next week is empty (done)
 - Add persistence for task status (whether it is done/not done) (done)
+- Bug: checkbox disappears when edit button is clicked?? (done)
 
+- Bug: due this week tab doesn't work for tasks due on previous days of the week
 - Local storage
+- Dealing with corrupted JSON
 - Bug: when in the inbox tab, when someone deletes a project, those associated tasks still stay
 - Dealing with expired/overdue todos (use a filter in inbox/ automatically change its color?)
-- Filtering in the inbox
+- Filtering in the inbox (priority, completed / not completed, overdue)
+- Transitions for when a DOM element is deleted
+- Hover effects for edit and delete button, currently only the cursor changes
 - Dark mode
 
 - Brainstorm how to organize stuff

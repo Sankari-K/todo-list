@@ -1,9 +1,7 @@
 import { endOfISOWeek } from 'date-fns';
 import { createTitle } from '../dom-manipulation/inboxPage';
-import { exitToDoInput } from '../dom-manipulation/createToDo';
+import { exitToDoInput, createToDoDOM } from '../dom-manipulation/createToDo';
 import { exitEditForm } from '../dom-manipulation/editToDo';
-import { Projects } from '../modules/projects';
-import { createToDoDOM } from '../dom-manipulation/createToDo';
 
 const checkDueThisWeek = () => {
     // remove the todo if its due date isn't this week
@@ -27,7 +25,7 @@ const checkDueThisWeek = () => {
     });
 }
 
-const showDueThisWeek = () => {
+const showDueThisWeek = (projectData) => {
     createTitle('Due this week');
     // in case the todo-creator was opened by any other project
     exitToDoInput();
@@ -47,9 +45,9 @@ const showDueThisWeek = () => {
     let end = new Date(endOfISOWeek(today, {weekStartsOn: 1}));
     end.setHours(0,0,0,0);
 
-    for (const project in Projects.projectList) {
+    for (const project in projectData.projectList) {
         // project has the project names
-        for (const todo of Projects.projectList[project].todos) {
+        for (const todo of projectData.projectList[project].todoList) {
             let due = new Date(todo.dueDate);
             due.setHours(0,0,0,0);
             if (due <= end && due >= today) {
@@ -61,7 +59,6 @@ const showDueThisWeek = () => {
 
     if (todoContainer.innerHTML == "") {
         todoContainer.innerHTML = '<div class="done">Tasks done for the week! 🎉 </div>';
-        console.log("today empty!");
     }
 }
 
