@@ -6,13 +6,13 @@ const toDo = (() => {
     let project;
     let done;
 
-    const createToDo = (newTitle, newDescription, newDueDate, newPriority, newProject) => {
+    const createToDo = (newTitle, newDescription, newDueDate, newPriority, newProject, newDone) => {
         title = newTitle;
         description = newDescription;
         dueDate = newDueDate;
         priority = newPriority;
         project = newProject;
-        done = false;
+        done = newDone;
         return {
             title, 
             description, 

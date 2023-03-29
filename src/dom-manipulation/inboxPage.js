@@ -1,5 +1,4 @@
 import { exitToDoInput } from "./createToDo";
-import { Projects } from "../modules/projects";
 import { createToDoDOM } from "./createToDo";
 import { exitEditForm } from "./editToDo";
 

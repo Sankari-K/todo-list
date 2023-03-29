@@ -61,6 +61,7 @@ Tasks:
 - What happens when a todo is edited on the bext week tab? (done)
 - Add a bottom margin for "today" and "this week" headers (done)
 - Add a "nothing due" text if today / next week is empty (done)
+- Add persistence for task status (whether it is done/not done) (done)
 
 - Local storage
 - Bug: when in the inbox tab, when someone deletes a project, those associated tasks still stay

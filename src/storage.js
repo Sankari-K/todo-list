@@ -5,8 +5,6 @@ const localStorageFunctions = (() => {
     const fetchFromStorage = () => {
         let projects = JSON.parse(localStorage.proj);
 
-        console.log("projects:", projects);
-
         let tempProjects = {};
         for (let project in projects.projectList) {
             let tempToDos = [];

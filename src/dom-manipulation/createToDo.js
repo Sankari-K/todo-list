@@ -44,6 +44,7 @@ const createToDoDOM = (todo, projectData) => {
         else {
             todo.done = false;
         }
+        localStorageFunctions.dumpIntoStorage(projectData);
     })
 
     let titleName = document.createElement('span');
@@ -134,7 +135,8 @@ const createToDoInput = (projectData) => {
                 desc.value, 
                 dueDate.value, 
                 priority.value, 
-                projectName);
+                projectName,
+                false);
             
             // add the todo to the project data structure
             projectData.projectList[projectName].addToProject(todo);
