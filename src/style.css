@@ -12,6 +12,11 @@
     --priority-bg: var(--nav);
 }
 
+.overdue {
+    --priority-color: #5B4B49 !important; 
+    --priority-bg: #5B4B4966 !important; 
+}
+
 .priority-1 {
     --priority-color: #F4442E;
     --priority-bg: #F4442E66;
@@ -132,7 +137,22 @@ div.project-container {
     border-radius: 7px;
 }
 
-.project-container > span {
+.project-container > .project-header {
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.project-header > img {
+    height: 20px;
+}
+
+.project-header {
+    cursor: pointer;
+}
+
+.project-container > .project-header > span {
     font-size: larger;
     font-weight: 500;
 }
@@ -174,8 +194,16 @@ div.project-container {
     background-color: var(--red);
 }
 
-#projects {
+.red:hover, .green:hover {
+    transform: scale(1.1); 
+}
+
+#projects{
     width: 100%;
+}
+
+.hide {
+    display: none;
 }
 
 #projects > div {
@@ -197,6 +225,10 @@ div.project-container {
     margin-left: auto;
     margin-right: 5px;
     display: var(--cancel-display);
+}
+
+.cancel:hover {
+    transform: scale(1.2); 
 }
 
 .content {
@@ -261,6 +293,7 @@ div.project-container {
 
 .todo .edits > img:hover {
     cursor: pointer;
+    transform: scale(1.2); 
 }
 
 .due-date {

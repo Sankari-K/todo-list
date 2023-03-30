@@ -64,6 +64,16 @@ const editToDo = (e, projectData) => {
         // change priority class
         todoDOM.className = todoDOM.className.replace( /priority-([1-4])/ , `priority-${todoEdit.priority}` );
 
+        // check due dates
+        let today = new Date();
+        today.setHours(0,0,0,0);
+        if (new Date(todoEdit.dueDate) < today) {
+            todoDOM.classList.add('overdue');
+        }
+        else {
+            todoDOM.classList.remove('overdue');
+        }
+
         let todoContainer = document.querySelector('.todos');
         // if we're on the "due today" page, check if the due date is no longer today
         if (document.querySelector('.content > span').textContent == "Due today ⚠") {

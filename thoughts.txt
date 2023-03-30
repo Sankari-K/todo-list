@@ -69,14 +69,15 @@ Tasks:
 32. Dealing with corrupted JSON (done)
 33. 404: assets not found (gh pages deployment) (done)
 34. Bug: projectData becomes undefined when you delete a project while in it (done)
+35. Dealing with expired/overdue todos (use a filter in inbox/ automatically change its color?) (done)
+36. Bug: when in the inbox tab, when someone deletes a project, those associated tasks still stay (done)
+37. Hover effects for edit and delete button, currently only the cursor changes (done)
+38. Functionality to hide all projects (done)
 
-35. Bug: when in the inbox tab, when someone deletes a project, those associated tasks still stay
-36. Dealing with expired/overdue todos (use a filter in inbox/ automatically change its color?)
-37. Filtering in the inbox (priorities, completed / not completed, overdue)
-38. Transitions for when a DOM element is deleted
-39. Hover effects for edit and delete button, currently only the cursor changes
-40. Dark mode
-41. Functionality to hide side nav or hide all projects
-42. Make is responsive
+39. Add number of days left
+40. Filtering (priorities, completed / not completed, overdue)
+41. Make it responsive
+42. Transitions for when a DOM element is deleted
+43. Dark mode
 
 - Brainstorm how to organize stuff

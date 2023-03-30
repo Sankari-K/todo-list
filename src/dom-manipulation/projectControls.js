@@ -12,7 +12,8 @@ const deleteProject = (e, projectData) => {
 
     let project = document.querySelector('.content > span').textContent;
     // If we were on the project that just got deleted, go to inbox
-    if (project == e.target.id) {
+    // or if we're in the inbox, refresh in case some todos need to get deleted 
+    if (project == e.target.id || project == "Inbox") {
         showInbox(projectData);
     }
 }

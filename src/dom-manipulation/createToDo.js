@@ -27,6 +27,12 @@ const createToDoDOM = (todo, projectData) => {
     let todoElement = document.createElement('div');
     todoElement.classList.add('todo', `priority-${todo.priority}`);
 
+    let today = new Date();
+    today.setHours(0,0,0,0);
+    if (new Date(todo.dueDate) < today) {
+        todoElement.classList.add('overdue');
+    }
+
     let header = document.createElement('div');
     let title = document.createElement('div'); 
     title.setAttribute('class', 'title');

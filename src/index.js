@@ -54,3 +54,19 @@ sidebar.getElementsByTagName('div')[1].addEventListener('click', function() {
 sidebar.getElementsByTagName('div')[2].addEventListener('click', function() {
     showDueThisWeek(projectData);
 });
+
+// add event listener to the dropdown near the projects
+sidebar.querySelector(".project-header").addEventListener('click', function() {
+    let projectContainer  = sidebar.querySelector("#projects");
+    let image = sidebar.querySelector(".project-header > img");
+    if (projectContainer.classList.contains("hide")) {
+        // show it
+        projectContainer.classList.remove("hide");
+        image.style.transform = `rotate(${0}deg)`;
+    }
+    else {
+        // hide it
+        projectContainer.classList.add("hide");
+        image.style.transform = `rotate(${-90}deg)`;
+    }
+})
