@@ -1,5 +1,6 @@
 import { checkDueThisWeek } from "../filtering/dueThisWeek";
 import { checkDueToday } from "../filtering/dueToday";
+import { checkOverdue } from "../filtering/overdue";
 import { localStorageFunctions } from "../storage";
 
 const exitEditForm = () => {
@@ -63,7 +64,7 @@ const editToDo = (e, projectData) => {
 
         let today = new Date();
         today.setHours(0,0,0,0);
-        var one_day = 1000*60*60*24;
+        var one_day = 1000 * 60 * 60 * 24;
         let dueIn = Math.floor((new Date(todoEdit.dueDate).getTime() - today.getTime()) / one_day);
         let dueDesc; 
         if (dueIn < 0) {
@@ -98,6 +99,13 @@ const editToDo = (e, projectData) => {
             checkDueThisWeek(todoDOM, todoEdit);
             if (todoContainer.innerHTML == "") {
                 todoContainer.innerHTML = '<div class="done">Tasks done for the week! 🎉 </div>';
+            }
+        }
+        // if we're on the "overdue" page, check if the todo is no longer overdue
+        else if (document.querySelector('.content > span').textContent == "Overdue") {
+            checkOverdue(todoDOM, todoEdit);
+            if (todoContainer.innerHTML == "") {
+                todoContainer.innerHTML = '<div class="done">No tasks are overdue!</div>';
             }
         }
     }

@@ -84,7 +84,7 @@ const createToDoDOM = (todo, projectData) => {
         todoElement.classList.add('overdue');
     }
 
-    var one_day = 1000*60*60*24;
+    var one_day = 1000 * 60 * 60 * 24;
     let dueIn = Math.floor((new Date(todo.dueDate).getTime() - today.getTime()) / one_day);
     let dueDesc; 
     if (dueIn < 0) {

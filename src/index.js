@@ -6,6 +6,7 @@ import { showDueToday } from './filtering/dueToday';
 import { showDueThisWeek } from './filtering/dueThisWeek';
 import { localStorageFunctions } from './storage';
 import { showCompleted } from './filtering/completed';
+import { showOverdue } from './filtering/overdue';
 
 let projectData;
 try {
@@ -60,6 +61,11 @@ sidebar.getElementsByTagName('div')[2].addEventListener('click', function() {
 sidebar.getElementsByTagName('div')[3].addEventListener('click', function() {
     showCompleted(projectData);
 }) 
+
+// show overdue tasks 
+sidebar.getElementsByTagName('div')[4].addEventListener('click', function() {
+    showOverdue(projectData);
+})
 
 // add event listener to the dropdown near the projects
 sidebar.querySelector(".project-header").addEventListener('click', function() {

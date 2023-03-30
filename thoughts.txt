@@ -58,7 +58,7 @@ Tasks:
   listener for the edit button, I called the check() function in the edit todo function,
   provided that the user is on the today page.]
 23. Get next week tab to work (done)
-24. What happens when a todo is edited on the bext week tab? (done)
+24. What happens when a todo is edited on the next week tab? (done)
 25. Add a bottom margin for "today" and "this week" headers (done)
 26. Add a "nothing due" text if today / next week is empty (done)
 27. Add persistence for task status (whether it is done/not done) (done)
@@ -74,10 +74,11 @@ Tasks:
 37. Hover effects for edit and delete button, currently only the cursor changes (done)
 38. Functionality to hide all projects (done)
 39. Add number of days left (done)
+40. Filtering (completed / not completed, overdue) (done)
 
-40. Filtering (priorities, completed / not completed, overdue)
-41. Make it responsive
-42. Transitions for when a DOM element is deleted
-43. Dark mode
+41. Add number of tasks for each category
+42. Make it responsive
+43. Transitions for when a DOM element is deleted / added
+44. Dark mode
 
 - Brainstorm how to organize stuff
