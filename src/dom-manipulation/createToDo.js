@@ -27,12 +27,6 @@ const createToDoDOM = (todo, projectData) => {
     let todoElement = document.createElement('div');
     todoElement.classList.add('todo', `priority-${todo.priority}`);
 
-    let today = new Date();
-    today.setHours(0,0,0,0);
-    if (new Date(todo.dueDate) < today) {
-        todoElement.classList.add('overdue');
-    }
-
     let header = document.createElement('div');
     let title = document.createElement('div'); 
     title.setAttribute('class', 'title');
@@ -74,9 +68,25 @@ const createToDoDOM = (todo, projectData) => {
     let edits = document.createElement('div');
     edits.setAttribute('class', 'edits');
 
+    let today = new Date();
+    today.setHours(0,0,0,0);
+    if (new Date(todo.dueDate) < today) {
+        todoElement.classList.add('overdue');
+    }
+
+    var one_day = 1000*60*60*24;
+    let dueIn = Math.floor((new Date(todo.dueDate).getTime() - today.getTime()) / one_day);
+    let dueDesc; 
+    if (dueIn < 0) {
+        dueDesc = "Overdue";
+    }
+    else {
+        dueDesc = `Due in ${dueIn} day(s)`;
+    }
     let due = document.createElement('span');
     due.setAttribute('class', 'due-date');
-    due.textContent = todo.dueDate;
+    due.textContent = `${todo.dueDate} - ${dueDesc}`;
+
     let editImg = document.createElement('img');
     editImg.src = editSrc;
     editImg.alt = "edit-icon";

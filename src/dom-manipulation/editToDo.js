@@ -60,13 +60,24 @@ const editToDo = (e, projectData) => {
 
         todoDOM.querySelector('.title > span').textContent = title.value;
         todoDOM.querySelector('.description').textContent = desc.value;
-        todoDOM.querySelector('.due-date').textContent = dueDate.value;
+
+        let today = new Date();
+        today.setHours(0,0,0,0);
+        var one_day = 1000*60*60*24;
+        let dueIn = Math.floor((new Date(todoEdit.dueDate).getTime() - today.getTime()) / one_day);
+        let dueDesc; 
+        if (dueIn < 0) {
+            dueDesc = "Overdue";
+        }
+        else {
+            dueDesc = `Due in ${dueIn} day(s)`;
+        }
+        todoDOM.querySelector('.due-date').textContent = `${todoEdit.dueDate} - ${dueDesc}`;
+
         // change priority class
         todoDOM.className = todoDOM.className.replace( /priority-([1-4])/ , `priority-${todoEdit.priority}` );
 
         // check due dates
-        let today = new Date();
-        today.setHours(0,0,0,0);
         if (new Date(todoEdit.dueDate) < today) {
             todoDOM.classList.add('overdue');
         }

@@ -73,8 +73,8 @@ Tasks:
 36. Bug: when in the inbox tab, when someone deletes a project, those associated tasks still stay (done)
 37. Hover effects for edit and delete button, currently only the cursor changes (done)
 38. Functionality to hide all projects (done)
+39. Add number of days left (done)
 
-39. Add number of days left
 40. Filtering (priorities, completed / not completed, overdue)
 41. Make it responsive
 42. Transitions for when a DOM element is deleted
