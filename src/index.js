@@ -5,6 +5,7 @@ import { showInbox } from './dom-manipulation/inboxPage';
 import { showDueToday } from './filtering/dueToday';
 import { showDueThisWeek } from './filtering/dueThisWeek';
 import { localStorageFunctions } from './storage';
+import { showCompleted } from './filtering/completed';
 
 let projectData;
 try {
@@ -54,6 +55,11 @@ sidebar.getElementsByTagName('div')[1].addEventListener('click', function() {
 sidebar.getElementsByTagName('div')[2].addEventListener('click', function() {
     showDueThisWeek(projectData);
 });
+
+// show completed tasks when clicked on it
+sidebar.getElementsByTagName('div')[3].addEventListener('click', function() {
+    showCompleted(projectData);
+}) 
 
 // add event listener to the dropdown near the projects
 sidebar.querySelector(".project-header").addEventListener('click', function() {

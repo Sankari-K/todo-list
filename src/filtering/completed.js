@@ -1,21 +1,23 @@
-import { createTitle } from "../dom-manipulation/inboxPage";
+import { createTitle } from "../dom-manipulation/inboxPage"
 import { exitToDoInput, createToDoDOM } from "../dom-manipulation/createToDo";
 import { exitEditForm } from "../dom-manipulation/editToDo";
-import { format } from 'date-fns'
 
-const checkDueToday = (todoDOM, todoObj) => {
-
-    // remove the todo if its due date isn't today
-    let today = format(new Date(),'yyyy-MM-dd');
-    if (todoDOM.classList.contains('todo')) {
-        if (todoObj.dueDate != today) {
-            todoDOM.remove();
-        }
-    }   
+const checkCompleted = () => {
+    let todoContainer = document.querySelector('.todos').childNodes;
+    todoContainer.forEach(todo => {
+        // remove the todo if it is not completed
+        if (todo.classList.contains('todo')) {
+            // find todo object
+            let todoObj = todo.querySelector('input');
+            if (todoObj.checked == false) {
+                todo.remove();
+            }
+        };
+    });
 }
 
-const showDueToday = (projectData) => {
-    createTitle('Due today ⚠');
+const showCompleted = (projectData) => {
+    createTitle('Completed projects');
     // in case the todo-creator was opened by any other project
     exitToDoInput();
     // in case the todo-editor was opened by any other project
@@ -29,13 +31,10 @@ const showDueToday = (projectData) => {
     // disable the create todo option
     document.querySelector('#create-todos').style.display = "none";
 
-    // show all projects due today
-    let today = format(new Date(),'yyyy-MM-dd');
-
     for (const project in projectData.projectList) {
         // project has the project names
         for (const todo of projectData.projectList[project].todoList) {
-            if (todo.dueDate == today) {
+            if (todo.done == true) {
                 let newToDo = createToDoDOM(todo, projectData);
                 todoContainer.appendChild(newToDo);
             }
@@ -43,11 +42,11 @@ const showDueToday = (projectData) => {
     }
 
     if (todoContainer.innerHTML == "") {
-        todoContainer.innerHTML = '<div class="done">Tasks done for the day! 🎉 </div>';
+        todoContainer.innerHTML = '<div class="done">No tasks completed yet!</div>';
     }
 }
 
 export {
-    showDueToday,
-    checkDueToday
+    showCompleted,
+    checkCompleted
 }

@@ -4,7 +4,6 @@ import { exitEditForm } from "./editToDo";
 const deleteToDo = (e, projectData) => {
     let toDelete = e.currentTarget.correspondingToDo;
     let projectName = toDelete.project;
-
     // if the edit option was opened for this, close that
     let todoDOM = e.currentTarget.parentNode.parentNode;
     if (todoDOM.nextSibling != null && todoDOM.nextSibling.id == "new-todo-edit") {

@@ -3,10 +3,9 @@ import { createTitle } from '../dom-manipulation/inboxPage';
 import { exitToDoInput, createToDoDOM } from '../dom-manipulation/createToDo';
 import { exitEditForm } from '../dom-manipulation/editToDo';
 
-const checkDueThisWeek = () => {
-    // remove the todo if its due date isn't this week
-    let todoContainer = document.querySelector('.todos').childNodes;
+const checkDueThisWeek = (todoDOM, todoObj) => {
     
+    // remove the todo if its due date isn't this week
     let today = new Date();
     today.setHours(0,0,0,0);
     let end = new Date(endOfISOWeek(today, {weekStartsOn: 1}));
@@ -14,17 +13,14 @@ const checkDueThisWeek = () => {
     let start = new Date(startOfISOWeek(today, {weekStartsOn: 1}));
     start.setHours(0,0,0,0);
 
-    todoContainer.forEach(todo => {
-        if (todo.classList.contains('todo')) {
-            let todoObj = todo.querySelector('.edits').lastChild.correspondingToDo;
-            let due = new Date(todoObj.dueDate);
-            due.setHours(0,0,0,0);
+    if (todoDOM.classList.contains('todo')) {
+        let due = new Date(todoObj.dueDate);
+        due.setHours(0,0,0,0);
 
-            if (!(due <= end && due >= start)) {
-                todo.remove();
-            }
-        }   
-    });
+        if (!(due <= end && due >= start)) {
+            todoDOM.remove();
+        }
+    }   
 }
 
 const showDueThisWeek = (projectData) => {

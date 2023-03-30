@@ -4,6 +4,7 @@ import { editToDo } from "./editToDo";
 import { localStorageFunctions } from "../storage";
 import delSrc from "../assets/content/delete.png";
 import editSrc from "../assets/content/edit.png";
+import { checkCompleted } from "../filtering/completed";
 
 const exitToDoInput = () => {
     let addToDo = document.querySelector('#create-todos');
@@ -47,6 +48,15 @@ const createToDoDOM = (todo, projectData) => {
             todo.done = false;
         }
         localStorageFunctions.dumpIntoStorage(projectData);
+
+        // if we're on the "completed" page, check if the tasks are completed
+        if (document.querySelector('.content > span').textContent == "Completed projects") {
+            checkCompleted();
+            let todoContainer = document.querySelector('.todos');
+            if (todoContainer.innerHTML == "") {
+                todoContainer.innerHTML = '<div class="done">No tasks completed yet!</div>';
+            }
+        }
     })
 
     let titleName = document.createElement('span');

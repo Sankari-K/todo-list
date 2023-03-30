@@ -88,14 +88,14 @@ const editToDo = (e, projectData) => {
         let todoContainer = document.querySelector('.todos');
         // if we're on the "due today" page, check if the due date is no longer today
         if (document.querySelector('.content > span').textContent == "Due today ⚠") {
-            checkDueToday();
+            checkDueToday(todoDOM, todoEdit);
             if (todoContainer.innerHTML == "") {
                 todoContainer.innerHTML = '<div class="done">Tasks done for the day! 🎉 </div>';
             }
         }
         // if we're on the "due this week" page, check if the due date is no longer this week
         else if (document.querySelector('.content > span').textContent == "Due this week") {
-            checkDueThisWeek();
+            checkDueThisWeek(todoDOM, todoEdit);
             if (todoContainer.innerHTML == "") {
                 todoContainer.innerHTML = '<div class="done">Tasks done for the week! 🎉 </div>';
             }
