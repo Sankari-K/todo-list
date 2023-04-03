@@ -108,7 +108,7 @@ let touchStartX = 0
 let touchEndX = 0
 
 function checkDirection() {
-    if (touchEndX < touchStartX) {
+    if (touchStartX - touchEndX >= 60) {
         // swiped left
         // show the main content, only if it isn't visible aready
         let displayStyle = window.getComputedStyle(document.querySelector('.content'), 
@@ -117,7 +117,7 @@ function checkDirection() {
             closeSidenav();
         }
     }
-    else if (touchEndX > touchStartX) {
+    else if (touchEndX - touchStartX >= 60) {
         // swiped right
         // show the sidenav, only if it isn't visible already
         let displayStyle = window.getComputedStyle(document.querySelector('.side-nav'), 

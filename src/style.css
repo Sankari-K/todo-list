@@ -378,7 +378,7 @@ input[type=checkbox]:checked + span {
     .content {
         width: 100vw;
         max-width:100%;
-        padding: 20px 10px;
+        padding: 20px 20px;
         /* display:none; */
     }
     .side-nav {
@@ -389,4 +389,8 @@ input[type=checkbox]:checked + span {
 
 img[alt="todolist-logo"] {
     cursor: pointer;
+}
+
+#new-todo-edit > div, #new-todo > div {
+    padding: 2px;
 }
