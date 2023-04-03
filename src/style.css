@@ -366,3 +366,27 @@ input[type=checkbox]:checked + span {
     justify-content: center;
     font-size: 26px;
 }
+
+@media (max-width: 630px) {
+    body {
+        height: 100vh;
+    }
+    .main-content {
+        display: flex;
+        max-width: 100%;
+    }
+    .content {
+        width: 100vw;
+        max-width:100%;
+        padding: 20px 10px;
+        /* display:none; */
+    }
+    .side-nav {
+        display: none; 
+        width: 100%;
+    }
+}
+
+img[alt="todolist-logo"] {
+    cursor: pointer;
+}

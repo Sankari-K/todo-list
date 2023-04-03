@@ -7,6 +7,7 @@ import { showDueThisWeek } from './filtering/dueThisWeek';
 import { localStorageFunctions } from './storage';
 import { showCompleted } from './filtering/completed';
 import { showOverdue } from './filtering/overdue';
+import { closeSidenav } from './dom-manipulation/menuControls';
 
 let projectData;
 try {
@@ -44,26 +45,31 @@ let sidebar = document.querySelector('.side-nav');
 
 // show inbox when clicked on it
 sidebar.getElementsByTagName('div')[0].addEventListener('click', function() {
+    closeSidenav();
     showInbox(projectData);
 });
 
 // show tasks due today when clicked on it
 sidebar.getElementsByTagName('div')[1].addEventListener('click', function() {
+    closeSidenav();
     showDueToday(projectData);
 });
 
 // show tasks due this week when clicked on it
 sidebar.getElementsByTagName('div')[2].addEventListener('click', function() {
+    closeSidenav();
     showDueThisWeek(projectData);
 });
 
 // show completed tasks when clicked on it
 sidebar.getElementsByTagName('div')[3].addEventListener('click', function() {
+    closeSidenav();
     showCompleted(projectData);
 }) 
 
 // show overdue tasks 
 sidebar.getElementsByTagName('div')[4].addEventListener('click', function() {
+    closeSidenav();
     showOverdue(projectData);
 })
 
@@ -81,4 +87,53 @@ sidebar.querySelector(".project-header").addEventListener('click', function() {
         projectContainer.classList.add("hide");
         image.style.transform = `rotate(${-90}deg)`;
     }
+})
+
+// for smaller screens
+document.querySelector('img[alt="todolist-logo"]').addEventListener('click', function() {
+    // If I click on this, it means I'd like to see the hamburger menu
+    // If the sidenav is not visible, do some action
+    let displayStyle = window.getComputedStyle(document.querySelector('.side-nav'), 
+                        null).getPropertyValue("display");
+    if (displayStyle == "none") {
+        // show the sidenav, hide the contents
+        document.querySelector('.side-nav').style.display = "block";
+        document.querySelector('.content').style.display = "none";
+    }
+})
+
+// add event listeners for swipes
+
+let touchStartX = 0
+let touchEndX = 0
+
+function checkDirection() {
+    if (touchEndX < touchStartX) {
+        // swiped left
+        // show the main content, only if it isn't visible aready
+        let displayStyle = window.getComputedStyle(document.querySelector('.content'), 
+                        null).getPropertyValue("display");
+        if (displayStyle == "none") {
+            closeSidenav();
+        }
+    }
+    else if (touchEndX > touchStartX) {
+        // swiped right
+        // show the sidenav, only if it isn't visible already
+        let displayStyle = window.getComputedStyle(document.querySelector('.side-nav'), 
+                        null).getPropertyValue("display");
+        if (displayStyle == "none") {
+            document.querySelector('.side-nav').style.display = "block";
+            document.querySelector('.content').style.display = "none";
+        }
+    }
+}
+
+document.addEventListener('touchstart', e => {
+    touchStartX = e.changedTouches[0].screenX;
+})
+
+document.addEventListener('touchend', e => {
+    touchEndX = e.changedTouches[0].screenX;
+    checkDirection();
 })
