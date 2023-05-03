@@ -1,7 +1,6 @@
 import { exitToDoInput } from "./createToDo";
 import { createToDoDOM } from "./createToDo";
 import { exitEditForm } from "./editToDo";
-import { closeSidenav } from "./menuControls";
 
 const createTitle = (name) => {
     let contentContainer = document.querySelector('.content');
@@ -16,9 +15,6 @@ const showProjectPage = (e, flag, projectData) => {
     else {
         projectName = e;
     }
-    // show the content part, in case we're on a small screen
-    closeSidenav();
-
     // create the title
     createTitle(projectName);
     // in case the todo-creator was opened by any other project
